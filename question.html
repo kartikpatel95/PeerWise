@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create Question</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+       <div class="container">
+        <div class="jumbotron">
+            <h1>Peer Wise</h1>
+        </div>
+
+    </div>
+</head>
+
+<body>
+
+
+
+<div class="container">
+  <h2>Write Questions</h2>
+  <p>Create your authord question related to the topics we have colvered below.</p>
+  <form>
+    <div class="form-group">
+      <label for="question">Question:</label>
+      <textarea type="question" class="form-control"> </textarea> 
+    </div>
+    <button type="submit" class="btn btn-default" onclick="clicked(event)">Submit</button>
+  </form>
+</div>
+  
+
+
+
+</body>
+
+
+<script>
+function clicked(e)
+{
+    if(!confirm('Question Submited'))e.preventDefault();
+}
+</script>
+
+</html>
