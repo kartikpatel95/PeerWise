@@ -32,53 +32,212 @@
   <p>Select the question that you would like to answer, then select another to answer another.</p>
 
   <form action="" class="well" >
-  <input type="radio" name="gender" value="male">What is the output of this python statement: print("Hello, World!")<br>
-  <input type="radio" name="gender" value="female">Which of the following is an invalid variable?<br>
-  <input type="radio" name="gender" value="male">What is the output of this python statement: "abcd"[2:]<br>
-  <input type="radio" name="gender" value="female">What is the maximum possible length of an identifier?<br>
-  <input type="radio" name="gender" value="male">What is answer of this expression, 22 % 3 is?<br>
-  <input type="radio" name="gender" value="female">What is the type of inf?<br>
-  <input type="radio" name="gender" value="male">What does ~4 evaluate to?<br>
-  <input type="radio" name="gender" value="female">What does ~~~~~~5 evaluate to?<br>
-  <input type="radio" name="gender" value="other">What is the result of cmp(3, 1)?<br><br>
+  <input type="radio" name="gender" value="1">What is the output of this python statement: print("Hello, World!")?<br>
+  <input type="radio" name="gender" value="2">Which of the following is an invalid variable?<br>
+  <input type="radio" name="gender" value="3">What is the output of this python statement: "abcd"[2:]<br>
+  <input type="radio" name="gender" value="4">What is the maximum possible length of an identifier?<br>
+  <input type="radio" name="gender" value="5">What is answer of this expression, 22 % 3 is?<br>
+  <input type="radio" name="gender" value="6">What is the type of inf?<br>
+  <input type="radio" name="gender" value="7">What does ~4 evaluate to?<br>
+  <input type="radio" name="gender" value="8">What does ~~~~~~5 evaluate to?<br>
+  <input type="radio" name="gender" value="9">What is the result of cmp(3, 1)?<br><br>
 
   <button type="button" id="questionButton" class="btn btn-default btn-md">Select Question</button>
-</form>
+  </form>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Question</h2>
+    </div>
+    <div id="question" class="modal-body">
+    </div>
+    <div id="answerA" class="modal-body">
+    </div>
+    <div id="answerB" class="modal-body">
+    </div>
+    <div id="answerC" class="modal-body">
+    </div>
+    <div id="answerD" class="modal-body">
+    </div>
+    <div class="modal-footer">
+      <h3>Modal Footer</h3>
+    </div>
+  </div>
 
 </div>
+
 </body>
 </html>
 
 <script type="text/javascript">
 //<!--
-var q1 = ["Hello World", "Hello, World", "hello, world!", "Hello, World!"];
-var a1 = 3;
+  var GLOBAL_INDEX_OF_ANS = 0;
 
-var q2 = ["my_string_1", "1st_string", "foo", "_"];
-var a2 = 1;
+  var q1 = ["Hello World", "Hello, World", "hello, world!", "Hello, World!"];
+  var a1 = 3;
 
-var q3 = ["a", "ab", "cd", "dc"];
-var a3 = 2;
+  var q2 = ["my_string_1", "1st_string", "foo", "_"];
+  var a2 = 1;
 
-var q4 = ["31 characters", "63 characters", "79 characters", "none of the mentioned"];
-var a4 = 3;
+  var q3 = ["a", "ab", "cd", "dc"];
+  var a3 = 2;
 
-var q5 = ["7", "1", "0", "5"];
-var a5 = 1;
+  var q4 = ["31 characters", "63 characters", "79 characters", "none of the mentioned"];
+  var a4 = 3;
 
-var q6 = ["Boolean", "Integer", "Float", "Complex"];
-var a6 = 2;
+  var q5 = ["7", "1", "0", "5"];
+  var a5 = 1;
 
-var q7 = ["-5", "-4", "-3", "+3"];
-var a7 = 0;
+  var q6 = ["Boolean", "Integer", "Float", "Complex"];
+  var a6 = 2;
 
-var q8 = ["+5", "-11", "+11", "-5"];
-var a8 = 0;
+  var q7 = ["-5", "-4", "-3", "+3"];
+  var a7 = 0;
 
-var q9 = ["1", "0", "True", "False"];
-var a9 = 0;
+  var q8 = ["+5", "-11", "+11", "-5"];
+  var a8 = 0;
+
+  var q9 = ["1", "0", "True", "False"];
+  var a9 = 0;
 
 
+
+
+  // Get the modal
+  var modal = document.getElementById('myModal');
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("questionButton");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal
+  btn.onclick = function() {
+      var radios = document.getElementsByName('gender');
+      var index = 0;
+      var question;
+      var answers;
+      var answer_index;
+
+      for (var i = 0, length = radios.length; i < length; i++) {
+          if (radios[i].checked) {
+              // do whatever you want with the checked radio
+              index = radios[i].value;
+              question = radios[i].nextSibling.data;
+              // only one radio can be logically checked, don't check the rest
+              break;
+          }
+      }
+      switch (parseInt(index)) {
+        case 1:
+            answers = q1;
+            GLOBAL_INDEX_OF_ANS = a1;
+            break;
+        case 2:
+            answers = q2;
+            GLOBAL_INDEX_OF_ANS = a2;
+            break;
+        case 3:
+            answers = q3;
+            GLOBAL_INDEX_OF_ANS = a3;
+            break;
+        case 4:
+            answers = q4;
+            GLOBAL_INDEX_OF_ANS = a4;
+            break;
+        case 5:
+            answers = q5;
+            GLOBAL_INDEX_OF_ANS = a5;
+            break;
+        case 6:
+            answers = q6;
+            GLOBAL_INDEX_OF_ANS = a6;
+            break;
+        case 7:
+            answers = q7;
+            GLOBAL_INDEX_OF_ANS = a7;
+            break;
+        case 8:
+            answers = q8;
+            GLOBAL_INDEX_OF_ANS = a8;
+            break;
+        case 9:
+            answers = q9;
+            GLOBAL_INDEX_OF_ANS = a9;
+            break;
+      }
+      var answerA = document.getElementById('answerA');
+      var answerB = document.getElementById('answerB');
+      var answerC = document.getElementById('answerC');
+      var answerD = document.getElementById('answerD');
+
+      document.getElementById('question').innerHTML = question;
+      answerA.innerHTML = answers[0];
+      answerB.innerHTML = answers[1];
+      answerC.innerHTML = answers[2];
+      answerD.innerHTML = answers[3];
+
+      answerA.removeEventListener('click', checkAnswerA, true);
+      answerB.removeEventListener('click', checkAnswerB, true);
+      answerC.removeEventListener('click', checkAnswerC, true);
+      answerD.removeEventListener('click', checkAnswerD, true);
+
+      answerA.addEventListener('click', checkAnswerA, true);
+      answerB.addEventListener('click', checkAnswerB, true);
+      answerC.addEventListener('click', checkAnswerC, true);
+      answerD.addEventListener('click', checkAnswerD, true);
+
+      modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+
+  function checkAnswerA()
+  {
+    checkAnswer(0);
+  }
+
+  function checkAnswerB()
+  {
+    checkAnswer(1);
+  }
+
+  function checkAnswerC()
+  {
+    checkAnswer(2);
+  }
+
+  function checkAnswerD()
+  {
+    checkAnswer(3);
+  }
+
+  function checkAnswer(answer)
+  {
+    if(GLOBAL_INDEX_OF_ANS == answer)
+    {
+      alert("Correct Answer!");
+    }else{
+      alert("Incorrect Answer");
+    }
+  }
 
 //-->
 </script>
