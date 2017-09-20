@@ -1,5 +1,5 @@
 body {
-  background-color: #efefef;
+  background-color: #f6f6f6;
   padding: 10px;
   font-family: 'Varela Round';
 }
@@ -82,17 +82,37 @@ input[type="radio"]{
 
 button[id="questionButton"]{
   margin-left: 3%;
-  width: 10%;
+  width: 12%;
 }
 
 h2{
   padding-bottom: 6px;
 }
 
-
 .jumbotron{
-  background-color: black;
+  background-color: #588bb6;
   color: white;
+  padding-left: 40px;
+  margin:0;
+}
+
+.navbar {
+    /*background-color: #2c3e50;*/
+    margin:0; /*add this*/
+}
+
+.mycontent-left {
+  border-right: 1px dashed #333;
+}
+
+.divider-left
+{
+  border-left: 1px solid #000000;
+}
+
+.divider-right
+{
+  border-right: 1px solid #000000;
 }
 
 a{
@@ -105,13 +125,17 @@ a:hover{
 
 a .well{
 color: black;
-background-color: lightgrey;
+background-color: #d5e4f9;
 text-decoration: none;
 }
 
 a .well:hover{
 color: white;
-background-color: darkgrey;
+background-color: #188ff9;
 text-decoration:none;
 cursor:pointer;
+}
+
+* {
+  font-family: "Verdana";
 }

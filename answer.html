@@ -11,45 +11,76 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-
-       <div class="container">
-        <div class="jumbotron">
-            <h1>Peer Wise</h1>
-        </div>
-
+    <div class= "jumbotron">
+        <h1>PeerWise</h1>
     </div>
+    <nav class="navbar navbar-inverse navbar-static-top divider-vertical">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li class="divider-right"><a href="course.html">Home</a></li>
+          <li class="divider-right"><a href="#">Profile</a></li>
+          <li class="divider-right"><a href="menu.html">CS101</a></li>
+          <li class="active"><a href="#">Answer Question</a></li>
+        </ul>
+      </div>
+    </nav>
 </head>
 
 <body>
-
-
-
 <div class="container">
   <h2>Select Question</h2>
   <p>Select the question that you would like to answer, then select another to answer another.</p>
 
   <form action="" class="well" >
-  <input type="radio" name="gender" value="male"> Add a question here<br>
-  <input type="radio" name="gender" value="female"> Add a question here<br>
-    <input type="radio" name="gender" value="male"> Add a question here<br>
-  <input type="radio" name="gender" value="female"> Add a question here<br>
-    <input type="radio" name="gender" value="male"> Add a question here<br>
-  <input type="radio" name="gender" value="female"> Add a question here<br>
-    <input type="radio" name="gender" value="male"> Add a question here<br>
-  <input type="radio" name="gender" value="female"> Add a question here<br>
-  <input type="radio" name="gender" value="other"> Add a question here<br><br>
+  <input type="radio" name="gender" value="male">What is the output of this python statement: print("Hello, World!")<br>
+  <input type="radio" name="gender" value="female">Which of the following is an invalid variable?<br>
+  <input type="radio" name="gender" value="male">What is the output of this python statement: "abcd"[2:]<br>
+  <input type="radio" name="gender" value="female">What is the maximum possible length of an identifier?<br>
+  <input type="radio" name="gender" value="male">What is answer of this expression, 22 % 3 is?<br>
+  <input type="radio" name="gender" value="female">What is the type of inf?<br>
+  <input type="radio" name="gender" value="male">What does ~4 evaluate to?<br>
+  <input type="radio" name="gender" value="female">What does ~~~~~~5 evaluate to?<br>
+  <input type="radio" name="gender" value="other">What is the result of cmp(3, 1)?<br><br>
 
   <button type="button" id="questionButton" class="btn btn-default btn-md">Select Question</button>
 </form>
 
 </div>
-  
-
-
-
 </body>
-
-
-
-
 </html>
+
+<script type="text/javascript">
+//<!--
+var q1 = ["Hello World", "Hello, World", "hello, world!", "Hello, World!"];
+var a1 = 3;
+
+var q2 = ["my_string_1", "1st_string", "foo", "_"];
+var a2 = 1;
+
+var q3 = ["a", "ab", "cd", "dc"];
+var a3 = 2;
+
+var q4 = ["31 characters", "63 characters", "79 characters", "none of the mentioned"];
+var a4 = 3;
+
+var q5 = ["7", "1", "0", "5"];
+var a5 = 1;
+
+var q6 = ["Boolean", "Integer", "Float", "Complex"];
+var a6 = 2;
+
+var q7 = ["-5", "-4", "-3", "+3"];
+var a7 = 0;
+
+var q8 = ["+5", "-11", "+11", "-5"];
+var a8 = 0;
+
+var q9 = ["1", "0", "True", "False"];
+var a9 = 3;
+
+var q10 = ["Hello World", "Hello, World", "hello, world!", "Hello, World!"];
+var a10 = 3;
+
+
+//-->
+</script>
