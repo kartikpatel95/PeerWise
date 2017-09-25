@@ -1,7 +1,10 @@
 body {
-  background-color: #f6f6f6;
-  padding: 10px;
+  background: linear-gradient(to top right, #ccffff 0%, #00264d 100%) no-repeat center center fixed;
   font-family: 'Varela Round';
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
@@ -73,7 +76,9 @@ body {
   font-size: 25px;
   color: #aaaaaa;
   font-weight: bold;
+
 }
+
 
 input[type="radio"]{
   margin: 10px 10px 0 10px;
@@ -82,25 +87,23 @@ input[type="radio"]{
 
 button[id="questionButton"]{
   margin-left: 3%;
-  width: 12%;
+  width: auto;
 }
 
 h2{
+  padding-left: 15px;
   padding-bottom: 6px;
+  font-family: "Verdana";
+  margin-left: -15px;
 }
 
 .jumbotron{
-  background-color: #588bb6;
-  color: white;
+  background: linear-gradient(to top right, #0c0c0c 0%, #262626 100%);
   padding-left: 40px;
   margin:0;
+
 }
 
-.navbar {
-    /*background-color: #2c3e50;*/
-    margin:0; /*add this*/
-    z-index: 0;
-}
 
 .mycontent-left {
   border-right: 1px dashed #333;
@@ -108,12 +111,12 @@ h2{
 
 .divider-left
 {
-  border-left: 1px solid #000000;
+  border-left: 1px dashed lightblue;
 }
 
 .divider-right
 {
-  border-right: 1px solid #000000;
+  border-right: 1px dashed lightblue;
 }
 
 a{
@@ -124,6 +127,7 @@ a:hover{
   text-decoration: none;
 }
 
+
 a .well{
 color: black;
 background-color: #d5e4f9;
@@ -132,7 +136,7 @@ text-decoration: none;
 
 a .well:hover{
 color: white;
-background-color: #188ff9;
+ background: linear-gradient(to bottom, #0c0c0c 0%, #666666 100%);
 text-decoration:none;
 cursor:pointer;
 }
@@ -146,7 +150,7 @@ cursor:pointer;
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: 1000%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -155,16 +159,46 @@ cursor:pointer;
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+	  cursor:pointer;
+    background-color:#588bb6;;
+}
+
+#profile{
+  position: relative;
+    margin: auto;
+    margin-top: -140px;
+    padding: 0;
+    border: 1px solid #888;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    cursor:pointer;
+    background-color:#588bb6;;
+}
+
+.profileImage{
+  padding-right: 20px; padding-top: 20px; padding-bottom: 20px;
+  height: 150px;
+  width: 120px;
+  opacity: .2;
+}
+
+.lock{
+  margin-left: -80px;
+   margin-top: 20px;
+   z-index: 1;
 }
 
 /* Add Animation */
@@ -193,6 +227,22 @@ cursor:pointer;
     cursor: pointer;
 }
 
+/* The Close Button */
+.closeProfile{
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    opacity: .2;
+}
+
+.closeProfile:hover,
+.closeProfile:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .modal-header {
     padding: 2px 16px;
     background-color: #588bb6;
@@ -201,12 +251,95 @@ cursor:pointer;
 
 .modal-body {padding: 2px 16px;}
 
+
+* {
+  font-family: "Verdana";
+}
+
 .modal-footer {
     padding: 2px 16px;
     background-color: #588bb6;
     color: white;
 }
 
-* {
-  font-family: "Verdana";
+#peerwiseImg{
+	margin-bottom:-3%;
+	margin-left:2%;
 }
+
+#courseBox {
+  min-height: 200px;
+}
+
+#progressbar{
+width:400px;
+height:10px;
+margin-left: -1px;
+padding: : 0px;
+}
+
+.courseText{
+  margin-top:50px;
+  font-size: 25px;
+}
+
+.questionBox{
+  margin-top:100px;
+}
+
+.vcenter{
+  display: flex;
+  align-items: center;
+}
+
+.user{
+  margin-top: -70px;
+  width: 90px;
+  height: 80px;
+  margin-right: 40px;
+}
+
+.disabled {
+   pointer-events: none;
+   cursor: default;
+   opacity: .2;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+nav li {
+    float: left;
+    font-style: italic;
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+    background-color: inherit;
+}
+
+.active {
+    font-weight: bold;
+}
+
+
+
+
+

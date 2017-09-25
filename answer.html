@@ -11,43 +11,81 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/progressBar.js"></script>
+
     <div class= "jumbotron">
-        <h1>PeerWise</h1>
+        <img id="logo" src="images/logo.png" height="200px" width="300px" style="margin: -50px;">
+        <div id="container" style="padding-bottom: -100px;">
+           <span class="well navbar-right" style="width: 400px; height: 175px; margin-top: -140px; margin-right: 2%; margin-bottom:0px; padding-left: 0px;">
+             <img src="images/user.png" onclick="openModal()" alt="User" height="100px" width="100px" align="right" style="margin-top: -5px; cursor: pointer;">
+
+            <br><br><br><br><br>
+            <p style="color:black; text-align: right; margin-bottom: 16px;"> <strong>Group8b</strong></p>
+
+            <progress id="progressbar" class="progress-bar" max="100" value="1"></progress>
+            <img id="levelImg2" class="" src="images/awards/star1.png" alt="star" align="left" height="25px;" style="margin-left:100%; margin-top: -20px;">
+          </span>
+        </div>
     </div>
-    <nav class="navbar navbar-inverse navbar-static-top divider-vertical">
-      <div class="container-fluid">
-        <ul class="nav navbar-nav">
+
+
+      <nav>
+        <ul>
+          <li class="divider-right"><a href="index.html">Logout</a></li>
           <li class="divider-right"><a href="course.html">Home</a></li>
-          <li class="divider-right"><a href="#">Profile</a></li>
           <li class="divider-right"><a href="menu.html">CS101</a></li>
           <li class="active"><a href="#">Answer Question</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+
 </head>
 
-<body>
+<body onload="initBar()">
 <div class="container">
   <h2>Select Question</h2>
+  <hr>
   <p>Select the question that you would like to answer, then select another to answer another.</p>
 
-  <form action="" class="well" >
-  <input type="radio" name="gender" value="1">What is the output of this python statement: print("Hello, World!")?<br>
-  <input type="radio" name="gender" value="2">Which of the following is an invalid variable name?<br>
-  <input type="radio" name="gender" value="3">What is the output of this python statement: "abcd"[2:]<br>
-  <input type="radio" name="gender" value="4">What is the maximum possible length of an identifier?<br>
-  <input type="radio" name="gender" value="5">What is answer of this expression, 22 % 3 is?<br>
-  <input type="radio" name="gender" value="6">What is the type of inf?<br>
-  <input type="radio" name="gender" value="7">What does ~4 evaluate to?<br>
-  <input type="radio" name="gender" value="8">What does ~~~~~~5 evaluate to?<br>
-  <input type="radio" name="gender" value="9">What is the result of cmp(3, 1)?<br><br>
+
+
+
+
+
+
+  <form action="" class="well">
+<label>Python Questions</label><br>
+
+  <input type="radio" name="gender" value="1"><span id="q1">What is the output of this python statement: print("Hello, World!")?</span><br>
+  <input type="radio" name="gender" value="2"><span id="q2">Which of the following is an invalid variable name?</span><br>
+  <input type="radio" name="gender" value="3"><span id="q3">What is the output of this python statement: "abcd"[2:]?</span><br>
+  <input type="radio" name="gender" value="4"><span id="q4">What is the maximum possible length of an identifier?</span><br>
+  <input type="radio" name="gender" value="5"><span id="q5">What is answer of this expression, 22 % 3 is?</span><br>
+  <input type="radio" name="gender" value="6"><span id="q6">What is the type of inf?</span><br>
+  <input type="radio" name="gender" value="7"><span id="q7">What does ~4 evaluate to?</span><br>
+  <input type="radio" name="gender" value="8"><span id="q8">What does ~~~~~~5 evaluate to?</span><br>
+  <input type="radio" name="gender" value="9"><span id="q9">What is the result of cmp(3, 1)?</span><br><br>
 
   <button type="button" id="questionButton" class="btn btn-default btn-md">Select Question</button>
+
+
+<div class="container">
+  <ul class="pager">
+    <li><a class="disabled" href="#">Previous</a></li>
+    <li><a href="ansPage2.html">Next</a></li>
+  </ul>
+</div>
+
   </form>
 </div>
 
+
+
+
+
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="answerModal" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
@@ -55,21 +93,91 @@
       <span class="close">&times;</span>
       <h2>Question</h2>
     </div>
-    <div id="question" class="modal-body">
+
+    <form id="answerForm" action="" class="well" >
+    <label id="question" class="modal-body"></label><br>
+    <input type="radio" name="answer" value="1"><span id="answerA"></span><br>
+    <input type="radio" name="answer" value="2"><span id="answerB"></span><br>
+    <input type="radio" name="answer" value="3"><span id="answerC"></span><br>
+    <input type="radio" name="answer" value="4"><span id="answerD"></span><br><br>
+
+    <button type="button" id="answerButton" class="btn btn-default btn-md" style="margin-left: 10px;">Submit</button>
+    </form>
+
+  </div>
+</div>
+
+<div id="profileModal" class="modal">
+  <!-- Modal content -->
+    <div class="modal-content" id="profile">
+      <div class="modal-header">
+        <span class="closeProfile">&times;</span>
+        <h2>Profile</h2>
+        <img src="images/user.png" alt="User" height="100px" width="100px" align="right" class="user">
+      </div>
+    <div class="well">
+      <h3>Your Progress</h3>
+        <progress id="progressbar_profile" class="progress-bar" max="100" value="1" align="right" style="height: 50px; width: 95%;"></progress>
+        <img id="levelImg" class="" src="images/awards/star1.png" alt="star" align="left" height="50px;" style="margin-left:93%; margin-top: -50px;">
+      <div class="container">
+        <table style="width:100%">
+          <tr>
+            <td><img id="achievement_1" class="profileImage" src="images/badges/leveledup2.jpg" align="left">
+            <img id="lock_1" src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+          </td>
+
+            <td><img id="achievement_2" class="profileImage" src="images/badges/firstq.jpg" align="left">
+             <img id="lock_2" src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+           </td>
+
+            <td><img id="achievement_3" class="profileImage" src="images/badges/firstans.jpg" align="left">
+             <img id="lock_3" src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+           </td>
+
+             <td> <img id="achievement_4" class="profileImage" src="images/badges/write5q.jpg" align="left">
+               <img id="lock_4" src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+             </td>
+
+            <td><img id="achievement_5" class="profileImage" src="images/badges/stayon30.jpg" align="left" >
+              <img id="lock_5" src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+            </td>
+
+            <td><img id="achievement_6" class="profileImage" src="images/badges/marathon.jpg" align="left">
+              <img id="lock_6" src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+            </td>
+          </tr>
+
+          <tr>
+            <td> <img class="profileImage" src="images/badges/einstein.jpg" align="left">
+                <img src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+            </td>
+
+            <td><img class="profileImage" src="images/badges/answerall.jpg" align="left" >
+                <img src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+            </td>
+
+            <td><img class="profileImage" src="images/badges/slack.jpg" align="left">
+                <img src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+            </td>
+
+            <td> <img class="profileImage" src="images/badges/explorer.jpg" align="left">
+                <img src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+            </td>
+
+            <td><img class="profileImage" src="images/badges/revealed.jpg" align="left" >
+               <img src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+            </td>
+
+            <td><img class="profileImage" src="images/badges/revealed.jpg" align="left">
+                <img src="images/awards/lock.png" alt="lock" height="70px" width="60px" class="lock">
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <div id="answerA" class="modal-body">
-    </div>
-    <div id="answerB" class="modal-body">
-    </div>
-    <div id="answerC" class="modal-body">
-    </div>
-    <div id="answerD" class="modal-body">
-    </div>
-    <div class="modal-footer">
     </div>
   </div>
 
-</div>
 
 </body>
 </html>
@@ -77,6 +185,7 @@
 <script type="text/javascript">
 //<!--
   var GLOBAL_INDEX_OF_ANS = 0;
+  var GLOBAL_ANS;
 
   var q1 = ["Hello World", "Hello, World", "hello, world!", "Hello, World!"];
   var a1 = 3;
@@ -105,138 +214,8 @@
   var q9 = ["1", "0", "True", "False"];
   var a9 = 0;
 
-
-
-
-  // Get the modal
-  var modal = document.getElementById('myModal');
-
-  // Get the button that opens the modal
-  var btn = document.getElementById("questionButton");
-
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks the button, open the modal
-  btn.onclick = function() {
-      var radios = document.getElementsByName('gender');
-      var index = 0;
-      var question;
-      var answers;
-      var answer_index;
-
-      for (var i = 0, length = radios.length; i < length; i++) {
-          if (radios[i].checked) {
-              // do whatever you want with the checked radio
-              index = radios[i].value;
-              question = radios[i].nextSibling.data;
-              // only one radio can be logically checked, don't check the rest
-              break;
-          }
-      }
-      switch (parseInt(index)) {
-        case 1:
-            answers = q1;
-            GLOBAL_INDEX_OF_ANS = a1;
-            break;
-        case 2:
-            answers = q2;
-            GLOBAL_INDEX_OF_ANS = a2;
-            break;
-        case 3:
-            answers = q3;
-            GLOBAL_INDEX_OF_ANS = a3;
-            break;
-        case 4:
-            answers = q4;
-            GLOBAL_INDEX_OF_ANS = a4;
-            break;
-        case 5:
-            answers = q5;
-            GLOBAL_INDEX_OF_ANS = a5;
-            break;
-        case 6:
-            answers = q6;
-            GLOBAL_INDEX_OF_ANS = a6;
-            break;
-        case 7:
-            answers = q7;
-            GLOBAL_INDEX_OF_ANS = a7;
-            break;
-        case 8:
-            answers = q8;
-            GLOBAL_INDEX_OF_ANS = a8;
-            break;
-        case 9:
-            answers = q9;
-            GLOBAL_INDEX_OF_ANS = a9;
-            break;
-      }
-      var answerA = document.getElementById('answerA');
-      var answerB = document.getElementById('answerB');
-      var answerC = document.getElementById('answerC');
-      var answerD = document.getElementById('answerD');
-
-      document.getElementById('question').innerHTML = question;
-      answerA.innerHTML = answers[0];
-      answerB.innerHTML = answers[1];
-      answerC.innerHTML = answers[2];
-      answerD.innerHTML = answers[3];
-
-      answerA.removeEventListener('click', checkAnswerA, true);
-      answerB.removeEventListener('click', checkAnswerB, true);
-      answerC.removeEventListener('click', checkAnswerC, true);
-      answerD.removeEventListener('click', checkAnswerD, true);
-
-      answerA.addEventListener('click', checkAnswerA, true);
-      answerB.addEventListener('click', checkAnswerB, true);
-      answerC.addEventListener('click', checkAnswerC, true);
-      answerD.addEventListener('click', checkAnswerD, true);
-
-      modal.style.display = "block";
-  }
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-      modal.style.display = "none";
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  }
-
-  function checkAnswerA()
-  {
-    checkAnswer(0);
-  }
-
-  function checkAnswerB()
-  {
-    checkAnswer(1);
-  }
-
-  function checkAnswerC()
-  {
-    checkAnswer(2);
-  }
-
-  function checkAnswerD()
-  {
-    checkAnswer(3);
-  }
-
-  function checkAnswer(answer)
-  {
-    if(GLOBAL_INDEX_OF_ANS == answer)
-    {
-      alert("Correct Answer!");
-    }else{
-      alert("Incorrect Answer");
-    }
-  }
-
+  var answerKey = "a1";
 //-->
 </script>
+<script src="scripts/profileModal.js"></script>
+<script src="scripts/answer.js"></script>
