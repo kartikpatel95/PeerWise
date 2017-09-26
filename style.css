@@ -360,7 +360,7 @@ nav li a:hover:not(.active) {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 940px) {
   #progressbar{
     display: none !important;
   }
@@ -372,5 +372,17 @@ nav li a:hover:not(.active) {
     height: 150px !important;
     min-width: 150px !important;
     margin-top: -25px !important;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  #progressbar{
+    display: none !important;
+  }
+  #levelImg2{
+    display: none !important;
+  }
+  #profile-container{
+    display: none !important;
   }
 }
