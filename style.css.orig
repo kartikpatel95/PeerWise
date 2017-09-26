@@ -9,7 +9,6 @@ body {
 
 nav{
     background-color: #F96D00;
-    min-width: 1000px;
 }
 
 .jumbotron{
@@ -326,6 +325,15 @@ padding : 0px;
    opacity: .2;
 }
 
+<<<<<<< HEAD
+||||||| merged common ancestors
+
+=======
+nav{
+  min-width: 1000px;
+}
+
+>>>>>>> master
 nav ul {
     list-style-type: none;
     margin: 0;

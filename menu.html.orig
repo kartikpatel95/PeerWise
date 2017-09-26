@@ -15,8 +15,18 @@
     <script src="scripts/progressBar.js"></script>
 
     <div class= "jumbotron">
+<<<<<<< HEAD
         <img id="logo" src="images/logo.png" style="margin: -50px;">
+        <div id="container" style="padding-bottom: -100px;">
+           <span class="well navbar-right" style="width: 400px; height: 175px; margin-top: -140px; margin-right: 2%; margin-bottom:0px; padding-left: 0px;">
+||||||| merged common ancestors
+        <img id="logo" src="images/logo.png" height="200px" width="300px" style="margin: -50px;">
+        <div id="container" style="padding-bottom: -100px;">
+           <span class="well navbar-right" style="width: 400px; height: 175px; margin-top: -140px; margin-right: 2%; margin-bottom:0px; padding-left: 0px;">
+=======
+        <img id="logo" src="images/logo.png" height="200px" width="300px" style="margin: -50px;">
            <div id="profile-container" class="well" align="right" style="Margin-top: -40px; width: 400px; height: 175px; margin-right: 2%; margin-bottom:0px; padding-left: 0px; float: right;">
+>>>>>>> master
              <img id="levelImg2" class="" src="" align="left" height="125px;" style="margin-left:10%; margin-top: 1%;">
              <img id="profile-pic" src="images/user.png" onclick="openModal()" alt="User" height="100px" width="100px" align="right" style="margin-top: -5px; cursor: pointer;">
 
