@@ -67,20 +67,25 @@ function initBar(){
 
   var level = parseInt(sessionStorage.getItem("lvl"));
 
+  if(level >= 1){
+    document.getElementById("levelImg").src = "images/awards/star1.png";
+    document.getElementById("levelImg2").src = "images/stars/star1.JPG";
+  }
+
   if(level >= 2){
     unlock_achievement_1();
     document.getElementById("levelImg").src = "images/awards/star2.png";
-    document.getElementById("levelImg2").src = "images/awards/star2.png";
+    document.getElementById("levelImg2").src = "images/stars/star2.JPG";
   }
 
   if(level >= 3){
     document.getElementById("levelImg").src = "images/awards/star3.png";
-    document.getElementById("levelImg2").src = "images/awards/star2.png";
+    document.getElementById("levelImg2").src = "images/stars/star3.JPG";
   }
 
   if(level >= 4){
     document.getElementById("levelImg").src = "images/awards/star4.png";
-    document.getElementById("levelImg2").src = "images/awards/star2.png";
+    document.getElementById("levelImg2").src = "images/stars/star4.JPG";
   }
 
   if(written >= 1){
