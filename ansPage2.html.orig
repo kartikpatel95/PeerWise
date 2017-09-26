@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Create Question</title>
+    <title>Answer Question</title>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,64 +11,92 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="scripts/progressBar.js"></script>
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea',
-    setup : function(ed) {
-                   ed.on('keydown', function(e) {
-                      checkIfText();
-                   });
-             }
-   });</script>
 
-   <div class= "jumbotron">
-       <img id="logo" src="images/logo.png" style="margin: -50px;">
-          <div id="profile-container" class="well" align="right" style="Margin-top: -40px; width: 400px; height: 175px; margin-right: 2%; margin-bottom:0px; padding-left: 0px; float: right;">
-            <img id="levelImg2" class="" src="" align="left" height="125px;" style="margin-left:10%; margin-top: 1%;">
-            <img id="profile-pic" src="images/user.png" onclick="openModal()" alt="User" height="100px" width="100px" align="right" style="margin-top: -5px; cursor: pointer;">
+    <div class= "jumbotron">
+<<<<<<< HEAD
+        <img id="logo" src="images/logo.png" style="margin: -50px;">
+        <div id="container" style="padding-bottom: -100px;">
+           <span class="well navbar-right" style="width: 400px; height: 175px; margin-top: -140px; margin-right: 2%; margin-bottom:0px; padding-left: 0px;">
+||||||| merged common ancestors
+        <img id="logo" src="images/logo.png" height="200px" width="300px" style="margin: -50px;">
+        <div id="container" style="padding-bottom: -100px;">
+           <span class="well navbar-right" style="width: 400px; height: 175px; margin-top: -140px; margin-right: 2%; margin-bottom:0px; padding-left: 0px;">
+=======
+        <img id="logo" src="images/logo.png" height="200px" width="300px" style="margin: -50px;">
+           <div id="profile-container" class="well" align="right" style="Margin-top: -40px; width: 400px; height: 175px; margin-right: 2%; margin-bottom:0px; padding-left: 0px; float: right;">
+>>>>>>> master
+             <img id="levelImg2" class="" src="" align="left" height="125px;" style="margin-left:10%; margin-top: 1%;">
+             <img id="profile-pic" src="images/user.png" onclick="openModal()" alt="User" height="100px" width="100px" align="right" style="margin-top: -5px; cursor: pointer;">
 
-           <br><br><br><br><br>
-           <p style="color:black; text-align: right; margin-bottom: 16px;"> <strong>Group8b</strong></p>
-           <progress id="progressbar" class="progress-bar" max="100" value="0"></progress>
-         </div>
-   </div>
-
+            <br><br><br><br><br>
+            <p style="color:black; text-align: right; margin-bottom: 16px;"> <strong>Group8b</strong></p>
+            <progress id="progressbar" class="progress-bar" max="100" value="0"></progress>
+          </div>
+    </div>
 
       <nav>
         <ul>
           <li class="divider-right"><a href="index.html">Logout</a></li>
           <li class="divider-right"><a href="course.html">Home</a></li>
           <li class="divider-right"><a href="menu.html">CS101</a></li>
-          <li class="active"><a href="#">Create Question</a></li>
+          <li class="active"><a href="#">Answer Question</a></li>
         </ul>
       </nav>
+
+      </div>
+    </nav>
 </head>
 
 <body onload="initBar()">
+<div class="container">
+  <h2>Select Question</h2>
+  <hr>
+  <p>Select the question that you would like to answer, then select another to answer another.</p>
 
+
+
+
+
+
+
+  <form action="" class="well">
+
+
+
+  <label>Java Questions</label><br>
+  <input type="radio" name="gender" value="1"><span id="q1">Which of the following is a valid print statement in java?</span><br>
+  <input type="radio" name="gender" value="2"><span id="q2">Which one of the following is not a java IDE?</span><br>
+  <input type="radio" name="gender" value="3"><span id="q3">Which is used to phase a object as a integer?</span><br>
+  <input type="radio" name="gender" value="4"><span id="q4">Which is the correct format for the main?</span><br>
+  <input type="radio" name="gender" value="5"><span id="q5">Which is the correct way to create a package?</span><br>
+  <input type="radio" name="gender" value="6"><span id="q6">Which is the correct way a string variable is defined?</span><br>
+  <input type="radio" name="gender" value="7"><span id="q7">What is the correct output of Math.round(100.675)?</span><br>
+  <input type="radio" name="gender" value="8"><span id="q8">Which is the correct way that to perform a override?</span><br>
+  <input type="radio" name="gender" value="9"><span id="q9">Which is not a java data type?</span><br><br>
+
+
+
+
+
+
+
+  <button type="button" id="questionButton" class="btn btn-default btn-md">Select Question</button>
 
 
 <div class="container">
-  <h2>Write Questions</h2>
-  <hr>
-  <p>Create your authord question related to the topics we have colvered below.</p>
-  <form>
-    <div class="form-group">
-      <label for="question">Question:</label>
-      <textarea id="ques" type="question" class="form-control" onkeypress="checkIfText()"></textarea><br>
-      <form action="">
-      	<p><strong>Answers:</strong></p>
-  	1) <textarea id="ans1" type="text" name="LastName" onkeypress="checkIfText()"></textarea><br>
-		2) <textarea id="ans2" type="text" name="LastName" onkeypress="checkIfText()"></textarea><br>
-		3) <textarea id="ans3" type="text" name="LastName" onkeypress="checkIfText()"></textarea><br>
-		4) <textarea id="ans4" type="text" name="LastName" onkeypress="checkIfText()"></textarea>
-	</form>
+  <ul class="pager">
+    <li><a href="answer.html">Previous</a></li>
+    <li><a class="disabled" href="#">Next</a></li>
+  </ul>
+</div>
 
-    </div>
-    <button id="submitBtn" type="submit" onclick ="validateForm()" class="btn btn-default">Submit</button>
   </form>
 </div>
+
+
 
 
 
@@ -146,48 +174,42 @@
 
 
 </body>
+</html>
 
+<script type="text/javascript">
+//<!--
+  var GLOBAL_INDEX_OF_ANS = 0;
+  var GLOBAL_ANS;
 
-<script>
+  var q1 = ["System.out.println();", "System.out.print();", "print();", "printf();"];
+  var a1 = 0;
 
-var submitBtn = document.getElementById("submitBtn");
-submitBtn.disabled = true;
+  var q2 = ["Net Beans", "Ecplise", "Notepad", "Dr Java"];
+  var a2 = 2;
 
-var question = tinyMCE.get('ques').getContent();
-var ans1 = tinyMCE.get('ans1').getContent();
-var ans2 = tinyMCE.get('ans2').getContent();
-var ans3 = tinyMCE.get('ans3').getContent();
-var ans4 = tinyMCE.get('ans4').getContent();
+  var q3 = ["parse()", "pasrseint()", "parseInt(String s)", "parseInteger()"];
+  var a3 = 2;
 
+  var q4 = ["public static void main(String[] args){}", "main(){}", "public static void main(String args){}", "public void main(String[] args){}"];
+  var a4 = 0;
 
+  var q5 = ["package name;", "just the name", "path of file", "just package"];
+  var a5 = 0;
 
-function checkIfText(){
-  var question = tinyMCE.get('ques').getContent();
-  var ans1 = tinyMCE.get('ans1').getContent();
-  var ans2 = tinyMCE.get('ans2').getContent();
-  var ans3 = tinyMCE.get('ans3').getContent();
-  var ans4 = tinyMCE.get('ans4').getContent();
+  var q6 = ['String name = "group8b";', 'name = "group8b";', 'name = group8b;', 'String = "group8b";'];
+  var a6 = 0;
 
-  if(question != "" && ans1 != "" && ans2 != "" && ans3 != "" && ans4 != ""){
-    submitBtn.disabled = false;
-  }else{
-    submitBtn.disabled = true;
-  }
-}
+  var q7 = ["100", "101", "100.676", "100.68"];
+  var a7 = 1;
 
-function validateForm() {
-    var x = document.getElementById("ques").value;
+  var q8 = ["extends name {}", "extend {}", "name extends name {}", "class name extends name {}"];
+  var a8 = 3;
 
-    if (x == " ") {
-        alert("You have missed the question, please fill in the fields");
-    }
-    else{
-      alert("Question Submited");
-      addWritten();
-      move();
-    }
-}
+  var q9 = ["long", "float", "byte", "extraLong "];
+  var a9 = 3;
 
+  var answerKey = "a2";
+//-->
 </script>
 <script src="scripts/profileModal.js"></script>
-</html>
+<script src="scripts/answer.js"></script>
