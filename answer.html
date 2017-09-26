@@ -28,6 +28,7 @@
     </div>
 
 
+
       <nav>
         <ul>
           <li class="divider-right"><a href="index.html">Logout</a></li>
@@ -77,6 +78,29 @@
   </form>
 </div>
 
+
+<!-- The Modal -->
+<div id="answerModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Question</h2>
+    </div>
+
+    <form id="answerForm" action="" class="well" >
+    <label id="question" class="modal-body"></label><br>
+    <input type="radio" name="answer" value="1"><span id="answerA"></span><br>
+    <input type="radio" name="answer" value="2"><span id="answerB"></span><br>
+    <input type="radio" name="answer" value="3"><span id="answerC"></span><br>
+    <input type="radio" name="answer" value="4"><span id="answerD"></span><br><br>
+
+    <button type="button" id="answerButton" class="btn btn-default btn-md" style="margin-left: 10px;">Submit</button>
+    </form>
+
+  </div>
+</div>
 
 
 
