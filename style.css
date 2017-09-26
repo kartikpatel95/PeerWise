@@ -132,6 +132,8 @@ a .well{
 color: black;
 background-color: #d5e4f9;
 text-decoration: none;
+min-height: 200px !important;
+min-width: 150px !important;
 }
 
 a .well:hover{
@@ -189,6 +191,13 @@ cursor:pointer;
 }
 
 .profileImage{
+  padding-right: 20px; padding-top: 20px; padding-bottom: 20px;
+  height: 150px;
+  width: 120px;
+  opacity: .2;
+}
+
+.achievement-image{
   padding-right: 20px; padding-top: 20px; padding-bottom: 20px;
   height: 150px;
   width: 120px;
@@ -273,7 +282,7 @@ cursor:pointer;
 
 #progressbar{
 width:400px;
-height:10px;
+height:15px;
 margin-left: -1px;
 padding: : 0px;
 }
@@ -305,6 +314,9 @@ padding: : 0px;
    opacity: .2;
 }
 
+nav{
+  min-width: 1000px;
+}
 
 nav ul {
     list-style-type: none;
@@ -340,6 +352,17 @@ nav li a:hover:not(.active) {
 }
 
 
-
-
-
+@media only screen and (max-width: 768px) {
+  #progressbar{
+    display: none !important;
+  }
+  #levelImg2{
+    display: none !important;
+  }
+  #profile-container{
+    width: 150px !important;
+    height: 150px !important;
+    min-width: 150px !important;
+    margin-top: -25px !important;
+  }
+}
