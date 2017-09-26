@@ -1,10 +1,30 @@
 body {
-  background: linear-gradient(to top right, #ccffff 0%, #00264d 100%) no-repeat center center fixed;
+  background: #F2F2F2;
   font-family: 'Varela Round';
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+nav{
+    background-color: #F96D00;
+}
+
+.jumbotron{
+    background: #222831;
+    padding-left: 40px;
+    margin:0;
+
+}
+
+#courseBox {
+    min-height: 200px;
+    background: #FFB174;
+}
+
+#courseBox:hover{
+    background: #393E46;
 }
 
 
@@ -76,6 +96,7 @@ body {
   font-size: 25px;
   color: #aaaaaa;
   font-weight: bold;
+    margin-left: 30px;
 
 }
 
@@ -95,13 +116,6 @@ h2{
   padding-bottom: 6px;
   font-family: "Verdana";
   margin-left: -15px;
-}
-
-.jumbotron{
-  background: linear-gradient(to top right, #0c0c0c 0%, #262626 100%);
-  padding-left: 40px;
-  margin:0;
-
 }
 
 
@@ -169,7 +183,7 @@ cursor:pointer;
     animation-name: animatetop;
     animation-duration: 0.4s;
 	  cursor:pointer;
-    background-color:#588bb6;;
+    background-color:#F96D00;
 }
 
 #profile{
@@ -185,7 +199,7 @@ cursor:pointer;
     animation-name: animatetop;
     animation-duration: 0.4s;
     cursor:pointer;
-    background-color:#588bb6;;
+    background-color:#F96D00;
 }
 
 .profileImage{
@@ -245,7 +259,7 @@ cursor:pointer;
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #588bb6;
+    background-color: #F96D00;
     color: white;
 }
 
@@ -264,18 +278,14 @@ cursor:pointer;
 
 #peerwiseImg{
 	margin-bottom:-3%;
-	margin-left:2%;
-}
-
-#courseBox {
-  min-height: 200px;
+	margin-left:30px;
 }
 
 #progressbar{
 width:400px;
 height:10px;
 margin-left: -1px;
-padding: : 0px;
+padding : 0px;
 }
 
 .courseText{
@@ -304,7 +314,6 @@ padding: : 0px;
    cursor: default;
    opacity: .2;
 }
-
 
 nav ul {
     list-style-type: none;
