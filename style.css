@@ -92,12 +92,13 @@ nav{
 }
 
 .logo {
-  padding: 15px 0;
   font-size: 25px;
   color: #aaaaaa;
   font-weight: bold;
-    margin-left: 30px;
+}
 
+#logo{
+    padding-left: 15px;
 }
 
 
