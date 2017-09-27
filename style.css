@@ -401,3 +401,18 @@ nav li a:hover:not(.active) {
     display: none !important;
   }
 }
+
+#profile_experience{
+    width: 90%;
+    margin-left: 5%;
+}
+
+#progressbar_profile{
+    height: 50px;
+    width: calc(100% - 26px);
+}
+
+#levelImg{
+    margin-left: calc(100% - 50px);
+    margin-top: -50px;
+}
