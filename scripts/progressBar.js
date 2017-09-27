@@ -8,6 +8,9 @@ function move() {
   if(sessionStorage.getItem("lvl") === null){
     sessionStorage.setItem("lvl", "1");
   }
+  if(sessionStorage.getItem("totalExp") == null){
+      sessionStorage.setItem("totalExp", "0");
+  }
   progress.value = parseInt(sessionStorage.getItem("exp"));
   var level = parseInt(sessionStorage.getItem("lvl"));
 
@@ -24,6 +27,10 @@ function move() {
     progressbar_profile.value = parseInt(sessionStorage.getItem("exp"))
     setTimeout(initBar, 100);
  }
+
+    var total_exp = parseInt(sessionStorage.getItem("totalExp"));
+    total_exp += 50;
+    sessionStorage.setItem("totalExp", total_exp.toString());
 }
 
 function initBar(){
@@ -39,6 +46,9 @@ function initBar(){
   }
   if(sessionStorage.getItem("written") === null){
     sessionStorage.setItem("written", "0");
+  }
+  if(sessionStorage.getItem("totalExp") == null){
+      sessionStorage.setItem("totalExp", "0");
   }
 
   var progress = document.getElementById("progressbar");
