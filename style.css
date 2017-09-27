@@ -143,7 +143,6 @@ a:hover{
   text-decoration: none;
 }
 
-
 a .well{
 color: black;
 background-color: #d5e4f9;
@@ -405,6 +404,7 @@ nav li a:hover:not(.active) {
 #profile_experience{
     width: 90%;
     margin-left: 5%;
+    float: left;
 }
 
 #progressbar_profile{
@@ -415,4 +415,36 @@ nav li a:hover:not(.active) {
 #levelImg{
     margin-left: calc(100% - 50px);
     margin-top: -50px;
+}
+
+.profile_tab{
+    height: 60px;
+    width: 150px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border: none;
+    border-radius: 4px;
+    background-color: #FFB174;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+.profile_tab:hover{
+    background-color:#393E46;
+    color: white;
+}
+
+#tab_container{
+    width: 100%;
+    height: 50px;
+    float: left;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#leaderboard_container{
+    width: 100%;
+    height: 400px;
+    border: solid;
+    float: left;
+    margin-top: 20px;
 }

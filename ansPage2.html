@@ -41,7 +41,7 @@
     </nav>
 </head>
 
-<body onload="initBar()">
+<body>
 <div class="container">
   <h2>Select Question</h2>
   <hr>
@@ -132,6 +132,11 @@
           <progress id="progressbar_profile" class="progress-bar makeHidden" max="100" value="1" align="right"></progress>
           <img id="levelImg" class="makeHidden" src="images/awards/star1.png" alt="star" align="left" height="50px;" width="50px">
       </div>
+
+      <div id="tab_container">
+          <button class="profile_tab" id="badge_button" onclick=showBadge()>Badge</button>
+          <button class="profile_tab" id="leaderboard_button" onclick=showLeaderboard()>Leaderboard</button>
+      </div>
       <div class="container">
           <div id="badge_container">
               <div class="badge_item">
@@ -183,6 +188,8 @@
                   <img id="lock_12" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
           </div>
+
+          <div id="leaderboard_container"></div>
       </div>
   </div>
   </div>
@@ -230,3 +237,4 @@
 <script src="scripts/profileModal.js"></script>
 <script src="scripts/answer.js"></script>
 <script src="scripts/achievementsTooltips.js"></script>
+<script src="scripts/profile_tab.js"></script>
