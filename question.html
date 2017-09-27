@@ -14,13 +14,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="scripts/progressBar.js"></script>
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea',
-    setup : function(ed) {
+    <script>
+    tinymce.init({
+            selector:'textarea',
+            menubar: false,
+            statusbar: false,
+            toolbar: "styleselect fontselect fontsizeselect | forecolor backcolor",
+            plugins: "textcolor",
+            setup : function(ed) {
                    ed.on('keydown', function(e) {
                       checkIfText();
                    });
-             }
-   });</script>
+                   /*
+                   ed.on('focus', function () {
+                     $(this.contentAreaContainer.parentElement).find("div.mce-toolbar-grp").show();
+
+                  });
+                    ed.on('blur', function () {
+                      $(this.contentAreaContainer.parentElement).find("div.mce-toolbar-grp").hide();
+
+                  });
+                    ed.on("init", function () {
+                    $(this.contentAreaContainer.parentElement).find("div.mce-toolbar-grp").hide();
+
+                });*/
+          }
+   });
+
+   </script>
 
    <div class= "jumbotron">
        <img id="logo" src="images/logo.png" style="margin: -50px;">
@@ -52,24 +73,49 @@
 <div class="container">
   <h2>Write Questions</h2>
   <hr>
-  <p>Create your authord question related to the topics we have colvered below.</p>
-  <form>
+
+
     <div class="form-group">
       <label for="question">Question:</label>
+      <p>Create your authord question related to the topics we have colvered below.</p>
       <textarea id="ques" type="question" class="form-control" onkeypress="checkIfText()"></textarea><br>
-      <form action="">
       	<p><strong>Answers:</strong></p>
-  	1) <textarea id="ans1" type="text" name="LastName" onkeypress="checkIfText()"></textarea><br>
-		2) <textarea id="ans2" type="text" name="LastName" onkeypress="checkIfText()"></textarea><br>
-		3) <textarea id="ans3" type="text" name="LastName" onkeypress="checkIfText()"></textarea><br>
-		4) <textarea id="ans4" type="text" name="LastName" onkeypress="checkIfText()"></textarea>
-	</form>
-
+        <p>You must indicate which of the answers is the correct answer to your question by selecting the letter to the left of the alternative.</p>
+        <div class="row">
+          <div id="letter1" class="container well col-md-1 questionOptions" onclick ='selectAnswer("letter1")'>
+            <p><strong>A<br>Select</strong></p>
+          </div>
+          <div class="container col-md-10" ;>
+            <textarea class="col-sm-8" id="ans1" type="text" name="LastName" onkeypress="checkIfText()"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div id="letter2" class="container well col-md-1 questionOptions" onclick ='selectAnswer("letter2")'>
+            <p><strong>B<br>Select</strong></p>
+          </div>
+          <div class="container col-md-10" ;>
+            <textarea class="col-sm-8" id="ans2" type="text" name="LastName" onkeypress="checkIfText()"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div id="letter3" class="container well col-md-1 questionOptions" onclick ='selectAnswer("letter3")'>
+            <p><strong>C<br>Select</strong></p>
+          </div>
+          <div class="container col-md-10" ;>
+            <textarea class="col-sm-8" id="ans3" type="text" name="LastName" onkeypress="checkIfText()"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div id="letter4" class="container well col-md-1 questionOptions" onclick ='selectAnswer("letter4")'>
+            <p><strong>D<br>Select</strong></p>
+          </div>
+          <div class="container col-md-10" ;>
+            <textarea class="col-sm-8" id="ans4" type="text" name="LastName" onkeypress="checkIfText()"></textarea>
+          </div>
+        </div>
     </div>
     <button id="submitBtn" type="submit" onclick ="validateForm()" class="btn btn-default">Submit</button>
-  </form>
 </div>
-
 
 
 <!-- The Modal -->
@@ -146,6 +192,7 @@
 
 
 <script>
+var isSelected = null;
 
 var submitBtn = document.getElementById("submitBtn");
 submitBtn.disabled = true;
@@ -157,7 +204,6 @@ var ans3 = tinyMCE.get('ans3').getContent();
 var ans4 = tinyMCE.get('ans4').getContent();
 
 
-
 function checkIfText(){
   var question = tinyMCE.get('ques').getContent();
   var ans1 = tinyMCE.get('ans1').getContent();
@@ -165,7 +211,7 @@ function checkIfText(){
   var ans3 = tinyMCE.get('ans3').getContent();
   var ans4 = tinyMCE.get('ans4').getContent();
 
-  if(question != "" && ans1 != "" && ans2 != "" && ans3 != "" && ans4 != ""){
+  if(question != "" && ans1 != "" && ans2 != "" && ans3 != "" && ans4 != "" && isSelected != null){
     submitBtn.disabled = false;
   }else{
     submitBtn.disabled = true;
@@ -185,6 +231,20 @@ function validateForm() {
     }
 }
 
+function selectAnswer(answerID){
+  if(isSelected != null){
+    var rmSelected = document.getElementById(isSelected);
+    rmSelected.style.backgroundColor = "lightgrey";
+    rmSelected.style.cursor = "pointer";
+  }
+  isSelected = answerID;
+
+  var makeSelected = document.getElementById(answerID);
+  makeSelected.style.backgroundColor = '#43d9e7';
+  makeSelected.style.cursor = "auto";
+
+  checkIfText();
+}
 </script>
 <script src="scripts/profileModal.js"></script>
 <script src="scripts/achievementsTooltips.js"></script>
