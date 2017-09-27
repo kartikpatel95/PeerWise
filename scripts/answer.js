@@ -157,7 +157,7 @@ answerBtn.onclick = function() {
     addAnswered();
     addAnsweredIndex();
     removeQuestion();
-
+    updateLeaderboard();
   }else{
     alert("Incorrect! Answer is: " + GLOBAL_ANS);
     addAnsweredIndex();
