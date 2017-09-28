@@ -414,6 +414,13 @@ nav li a:hover:not(.active) {
     min-width: 150px !important;
     margin-top: -25px !important;
   }
+
+}
+
+#profile_rank{
+    position: absolute !important;
+    top: 140px;
+    right: 290px;
 }
 
 @media only screen and (max-width: 680px) {
@@ -426,6 +433,9 @@ nav li a:hover:not(.active) {
   #profile-container{
     display: none !important;
   }
+    #profile_rank{
+        display: none !important;
+    }
 }
 
 #profile_experience{
