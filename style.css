@@ -392,6 +392,7 @@ nav li a:hover:not(.active) {
   margin-top: 10px;
   background-color: lightgray;
   text-align: center;
+  padding-top: 35px;
 }
 .questionOptions:focus,
 .questionOptions:hover{
