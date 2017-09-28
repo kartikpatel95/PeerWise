@@ -3,6 +3,7 @@ var userScores = [400, 360, 310, 260, 210, 160, 110, 60, 10]
 
 window.onload= function () {
     initBar();
+    updateLeaderboard();
     document.getElementById("leaderboard_container").style.display = "none";
 }
 function showBadge(){
@@ -73,4 +74,6 @@ function addPlayerRank(rankNum, userScore) {
     playerRow.id = "player_row";
 
     leaderboard.appendChild(playerRow);
+
+    document.getElementById("profile_rank").innerHTML = "Rank: #" + rankNum;
 }
