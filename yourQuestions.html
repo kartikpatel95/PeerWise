@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Your Question</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/progressBar.js"></script>
+
+    <div class= "jumbotron">
+        <img id="logo" src="images/logo.png" style="margin: -50px;">
+           <div id="profile-container" class="well" align="right" style="Margin-top: -40px; width: 400px; height: 175px; margin-right: 2%; margin-bottom:0px; padding-left: 0px; float: right;">
+
+             <img id="levelImg2" class="" src="" align="left" height="125px;" style="margin-left:10%; margin-top: 1%;">
+             <img id="profile-pic" src="images/user.png" onclick="openModal()" alt="User" height="100px" width="100px" align="right" style="margin-top: -5px; cursor: pointer;">
+
+            <br><br><br><br><br>
+            <p style="color:black; text-align: right; margin-bottom: 16px;"> <strong>Group8b</strong></p>
+            <progress id="progressbar" class="progress-bar" max="100" value="0"></progress>
+          </div>
+    </div>
+
+
+
+      <nav>
+        <ul>
+          <li class="divider-right"><a href="index.html">Logout</a></li>
+          <li class="divider-right"><a href="course.html">Home</a></li>
+          <li class="divider-right"><a href="menu.html">CS101</a></li>
+          <li class="active"><a href="#">Answer Question</a></li>
+        </ul>
+      </nav>
+
+</head>
+
+<body>
+<div class="container">
+<br><br>
+  <h2 class="pageHeaders">Your Question</h2>
+    <p class="pageInfo">Select the question that you would like to answer, then select another to answer another.</p>
+
+  <hr>
+
+
+
+
+
+
+
+<form action="" class="well">
+<label>Your Questions</label><br>
+
+  <input id="radio_q1" type="radio" name="gender" value="1"><label class="not-bold" id="q1"></label><br id='break1'>
+  <input id="radio_q2" type="radio" name="gender" value="2"><label class="not-bold" id="q2"></label><br id='break2'>
+  <input id="radio_q3" type="radio" name="gender" value="3"><label class="not-bold" id="q3"></label><br id='break3'>
+  <input id="radio_q4" type="radio" name="gender" value="4"><label class="not-bold" id="q4"></label><br id='break4'>
+  <input id="radio_q5" type="radio" name="gender" value="5"><label class="not-bold" id="q5"></label><br id='break5'>
+  <input id="radio_q6" type="radio" name="gender" value="6"><label class="not-bold" id="q6"></label><br id='break6'>
+  <input id="radio_q7" type="radio" name="gender" value="7"><label class="not-bold" id="q7"></label><br id='break7'>
+  <input id="radio_q8" type="radio" name="gender" value="8"><label class="not-bold" id="q8"></label><br id='break8'>
+  <input id="radio_q9" type="radio" name="gender" value="9"><label class="not-bold" id="q9"></label><br id='break9'>
+
+  <br><br>
+
+  <button type="button" id="questionButton" class="btn btn-default btn-md">select Question</button>
+
+  <div class="container">
+    <ul class="pager">
+      <li><a class="disabled" href="#">Previous</a></li>
+      <li><a class="disabled" href="ansPage2.html">Next</a></li>
+    </ul>
+  </div>
+
+</form>
+</div>
+
+
+<!-- The Modal -->
+<div id="answerModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Question</h2>
+    </div>
+
+    <form id="answerForm" action="" class="well" >
+    <label id="question" class="modal-body"></label><br>
+    <input type="radio" name="answer" value="1"><label class="not-bold" id="answerA"></label><br>
+    <input type="radio" name="answer" value="2"><label class="not-bold" id="answerB"></label><br>
+    <input type="radio" name="answer" value="3"><label class="not-bold" id="answerC"></label><br>
+    <input type="radio" name="answer" value="4"><label class="not-bold" id="answerD"></label><br><br>
+
+    <button type="button" id="answerButton" class="btn btn-default btn-md" style="margin-left: 10px;">Exit</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+<!-- The Modal -->
+<div id="profileModal" class="modal">
+<!-- Modal content -->
+  <div class="modal-content" id="profile">
+    <div class="modal-header">
+      <span class="closeProfile">&times;</span>
+      <h2>Profile</h2>
+      <img src="images/user.png" alt="User" height="100px" width="100px" align="right" class="user">
+    </div>
+  <div class="well">
+      <div id="profile_experience">
+          <h3>Experience</h3>
+          <progress id="progressbar_profile" class="progress-bar makeHidden" max="100" value="1" align="right"></progress>
+          <img id="levelImg" class="makeHidden" src="images/awards/star1.png" alt="star" align="left" height="50px;" width="50px">
+      </div>
+
+      <div id="tab_container">
+          <button class="profile_tab" id="badge_button" onclick=showBadge()>Badge</button>
+          <button class="profile_tab" id="leaderboard_button" onclick=showLeaderboard()>Leaderboard</button>
+      </div>
+      <div class="container">
+          <div id="badge_container">
+              <div class="badge_item">
+                  <img id="achievement_1" class="achievement-image" src="images/badges/leveledup2.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_1" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+              <div class="badge_item">
+                  <img id="achievement_2" class="achievement-image" src="images/badges/firstq.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_2" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+              <div class="badge_item">
+                  <img id="achievement_3" class="achievement-image" src="images/badges/firstans.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_3" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+              <div class="badge_item">
+                  <img id="achievement_4" class="achievement-image" src="images/badges/write5q.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_4" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+              <div class="badge_item">
+                  <img id="achievement_5" class="achievement-image" src="images/badges/stayon30.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_5" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+              <div class="badge_item">
+                  <img id="achievement_6" class="achievement-image" src="images/badges/marathon.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_6" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+              <div class="badge_item">
+                  <img id="achievement_7" class="achievement-image" src="images/badges/einstein.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_7" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+              <div class="badge_item">
+                  <img id="achievement_8" class="achievement-image" src="images/badges/answerall.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_8" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+              <div class="badge_item">
+                  <img id="achievement_9" class="achievement-image" src="images/badges/slack.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_9" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+              <div class="badge_item">
+                  <img id="achievement_10" class="achievement-image" src="images/badges/explorer.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_10" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+              <div class="badge_item">
+                  <img id="achievement_11" class="achievement-image" src="images/badges/revealed.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_11" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+              <div class="badge_item">
+                  <img id="achievement_12" class="achievement-image" src="images/badges/revealed.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+                  <img id="lock_12" src="images/awards/lock.png" alt="lock" class="lock">
+              </div>
+          </div>
+
+          <div id="leaderboard_container">
+              <table class="table table-striped">
+                  <thead>
+                  <tr>
+                      <th>Rank</th>
+                      <th>Name</th>
+                      <th>Score</th>
+                  </tr>
+                  </thead>
+                  <tbody id="leaderboard_content">
+
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
+
+
+    <!----------- Footer ------------>
+
+
+    <footer class="footer-bs">
+        <p>PeerWise © University of Auckland</p>
+    </footer>
+
+</body>
+</html>
+
+<script type="text/javascript">
+//<!--
+  var GLOBAL_INDEX_OF_ANS = 0;
+  var GLOBAL_ANS;
+
+  var modal = document.getElementById('answerModal');
+  var span = document.getElementsByClassName("close")[0];
+
+  var ansBtn = document.getElementById("answerButton");
+  //ansBtn.disabled = true;
+
+  var btn = document.getElementById("questionButton");
+  btn.disabled = true;
+
+  var radiosQ = document.getElementsByName('gender');
+  for (var i = 0, length = radiosQ.length; i < length; i++) {
+    radiosQ[i].onclick = function() {
+      btn.disabled = false;
+    }
+  }
+
+  var radiosAns = document.getElementsByName('answer');
+  for (var i = 0, length = radiosAns.length; i < length; i++) {
+    radiosAns[i].disabled = true;
+    radiosAns[i].onclick = function() {
+      ansBtn.disabled = false;
+    }
+  }
+
+  var totalSubmittedQuestions = '0';
+  if(sessionStorage.getItem("totalSubmittedQuestions") != null){
+      totalSubmittedQuestions = sessionStorage.getItem("totalSubmittedQuestions");
+  }
+
+  for(var i = 1; i <= 9 ; i++){
+    if(i <= parseInt(totalSubmittedQuestions)){
+      document.getElementById(("q"+i)).innerHTML = sessionStorage.getItem("ques_" + i);
+    }else{
+      document.getElementById(("radio_q"+i)).style.display = "none";
+      document.getElementById(("break"+i)).style.display = "none";
+    }
+  }
+
+  btn.onclick = function(){
+    var index;
+
+    for (var i = 0, length = radiosQ.length; i < length; i++) {
+        if (radiosQ[i].checked) {
+            index = parseInt(radiosQ[i].value);
+            break;
+        }
+    }
+    GLOBAL_INDEX_OF_ANS = sessionStorage.getItem("ansID_" + index);
+
+    radiosAns[parseInt(GLOBAL_INDEX_OF_ANS)].checked = true;
+
+    var answerA = document.getElementById('answerA');
+    var answerB = document.getElementById('answerB');
+    var answerC = document.getElementById('answerC');
+    var answerD = document.getElementById('answerD');
+
+    document.getElementById('question').innerHTML = sessionStorage.getItem("ques_" + index);
+    answerA.innerHTML = sessionStorage.getItem("ans1_" + index);
+    answerB.innerHTML = sessionStorage.getItem("ans2_" + index);
+    answerC.innerHTML = sessionStorage.getItem("ans3_" + index);
+    answerD.innerHTML = sessionStorage.getItem("ans4_" + index);
+
+    modal.style.display = "block";
+  }
+
+  ansBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+      modal.style.display = "none";
+      resetAnsForm();
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+          resetAnsForm();
+      }
+  }
+
+  function resetAnsForm()
+  {
+    document.getElementById("answerForm").reset();
+  }
+//-->
+</script>
+<script src="scripts/profileModal.js"></script>
+<script src="scripts/achievementsTooltips.js"></script>
+<script src="scripts/profile_tab.js"></script>
