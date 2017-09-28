@@ -71,16 +71,20 @@
 
 
 <div class="container">
-  <h2>Write Questions</h2>
+<br><br>
+  <h2 class="pageHeaders">Write Questions</h2>
+   <p class ="pageInfo">Create your authord question related to the topics we have colvered below.</p>
   <hr>
 
 
     <div class="form-group">
       <label for="question">Question:</label>
-      <p>Create your authord question related to the topics we have colvered below.</p>
+	  <p>Write the <strong>main text</strong> of the question below. Make sure the question is clear and unambiguous, and use language which is professional. 
+	  Feel free to format the text of your question using the formatting options.</p>
       <textarea id="ques" type="question" class="form-control" onkeypress="checkIfText()"></textarea><br>
-      	<p><strong>Answers:</strong></p>
-        <p>You must indicate which of the answers is the correct answer to your question by selecting the letter to the left of the alternative.</p>
+      	<p><strong>Alternatives:</strong></p>
+        <p>Write up to <strong>four</strong>alternative answers for the question you have written above. You must ensure that exactly one of the alternatives is the correct answer to your question. 
+		<br><br>You <strong>must indicate </strong>which of the alternatives is the correct answer to your question by selecting the letter to the left of the alternative.</p>
         <div class="row">
           <div id="letter1" class="container well col-md-1 questionOptions" onclick ='selectAnswer("letter1")'>
             <p><strong>A<br>Select</strong></p>
@@ -210,6 +214,17 @@
 </div>
 
 
+
+
+
+    <!----------- Footer ------------>
+	
+	
+    <footer class="footer-bs">
+        <p>PeerWise © University of Auckland</p>
+    </footer>
+	
+	
 </body>
 
 

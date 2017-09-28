@@ -5,6 +5,8 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+
 }
 
 nav{
@@ -19,6 +21,10 @@ nav{
 
 }
 
+
+
+
+
 #courseBox {
     min-height: 200px;
     background: #FFB174;
@@ -27,6 +33,12 @@ nav{
 #courseBox:hover{
     background: #393E46;
 }
+
+
+hr {
+ border-top: 1px dotted black;
+}
+
 
 
 /*=== 4. Main Form ===*/
@@ -117,9 +129,8 @@ h2{
   padding-left: 15px;
   padding-bottom: 6px;
   font-family: "Verdana";
-  margin-left: -15px;
-}
 
+}
 
 .mycontent-left {
   border-right: 1px dashed #333;
@@ -469,4 +480,34 @@ nav li a:hover:not(.active) {
 
 #player_row td{
     font-weight: bold;
+}
+
+
+#homeContent{
+	margin-left:40px;
+	padding:20px;
+	padding-bottom:0px;
+	padding-top:10px;
+}
+
+
+.footer-bs {
+    background-color: #222831;
+	color: rgba(255,255,255,1.00);
+	min-height: 40px;
+	text-align:center;
+	margin-top:20px;
+}
+
+#joinCourse{
+	margin-left:60px;
+	margin-top:3px;
+}
+
+.pageInfo{
+	margin-left:25px;
+}
+
+.pageHeaders{
+	margin-left:10px;
 }
