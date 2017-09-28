@@ -400,6 +400,12 @@ nav li a:hover:not(.active) {
   cursor: pointer;
 }
 
+.not-bold {
+    font-weight: normal !important;
+    vertical-align: top;
+    margin-top: 5px;
+}
+
 
 @media only screen and (max-width: 940px) {
   #progressbar{

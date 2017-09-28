@@ -79,14 +79,14 @@
 
     <div class="form-group">
       <label for="question">Question:</label>
-	  <p>Write the <strong>main text</strong> of the question below. Make sure the question is clear and unambiguous, and use language which is professional. 
+	  <p>Write the <strong>main text</strong> of the question below. Make sure the question is clear and unambiguous, and use language which is professional.
 	  Feel free to format the text of your question using the formatting options.</p>
       <textarea id="ques" type="question" class="form-control" onkeypress="checkIfText()"></textarea><br>
       	<p><strong>Alternatives:</strong></p>
-        <p>Write up to <strong>four</strong>alternative answers for the question you have written above. You must ensure that exactly one of the alternatives is the correct answer to your question. 
+        <p>Write up to <strong>four</strong>alternative answers for the question you have written above. You must ensure that exactly one of the alternatives is the correct answer to your question.
 		<br><br>You <strong>must indicate </strong>which of the alternatives is the correct answer to your question by selecting the letter to the left of the alternative.</p>
         <div class="row">
-          <div id="letter1" class="container well col-md-1 questionOptions" onclick ='selectAnswer("letter1")'>
+          <div id="letter1" class="container well col-md-1 questionOptions" onclick ='selectAnswer("0")'>
             <p><strong>A<br>Select</strong></p>
           </div>
           <div class="container col-md-10" ;>
@@ -94,7 +94,7 @@
           </div>
         </div>
         <div class="row">
-          <div id="letter2" class="container well col-md-1 questionOptions" onclick ='selectAnswer("letter2")'>
+          <div id="letter2" class="container well col-md-1 questionOptions" onclick ='selectAnswer("1")'>
             <p><strong>B<br>Select</strong></p>
           </div>
           <div class="container col-md-10" ;>
@@ -102,7 +102,7 @@
           </div>
         </div>
         <div class="row">
-          <div id="letter3" class="container well col-md-1 questionOptions" onclick ='selectAnswer("letter3")'>
+          <div id="letter3" class="container well col-md-1 questionOptions" onclick ='selectAnswer("2")'>
             <p><strong>C<br>Select</strong></p>
           </div>
           <div class="container col-md-10" ;>
@@ -110,7 +110,7 @@
           </div>
         </div>
         <div class="row">
-          <div id="letter4" class="container well col-md-1 questionOptions" onclick ='selectAnswer("letter4")'>
+          <div id="letter4" class="container well col-md-1 questionOptions" onclick ='selectAnswer("3")'>
             <p><strong>D<br>Select</strong></p>
           </div>
           <div class="container col-md-10" ;>
@@ -218,13 +218,13 @@
 
 
     <!----------- Footer ------------>
-	
-	
+
+
     <footer class="footer-bs">
         <p>PeerWise © University of Auckland</p>
     </footer>
-	
-	
+
+
 </body>
 
 
@@ -233,13 +233,6 @@ var isSelected = null;
 
 var submitBtn = document.getElementById("submitBtn");
 submitBtn.disabled = true;
-
-var question = tinyMCE.get('ques').getContent();
-var ans1 = tinyMCE.get('ans1').getContent();
-var ans2 = tinyMCE.get('ans2').getContent();
-var ans3 = tinyMCE.get('ans3').getContent();
-var ans4 = tinyMCE.get('ans4').getContent();
-
 
 function checkIfText(){
   var question = tinyMCE.get('ques').getContent();
@@ -265,23 +258,98 @@ function validateForm() {
       alert("Question Submited");
       addWritten();
       move();
+      saveQuestion();
     }
 }
 
 function selectAnswer(answerID){
+  var buttonID = getButtonID(parseInt(isSelected));
   if(isSelected != null){
-    var rmSelected = document.getElementById(isSelected);
+    buttonID = getButtonID(parseInt(isSelected));
+    var rmSelected = document.getElementById(buttonID);
     rmSelected.style.backgroundColor = "lightgrey";
     rmSelected.style.cursor = "pointer";
   }
-  isSelected = answerID;
 
-  var makeSelected = document.getElementById(answerID);
+  isSelected = answerID;
+  buttonID = getButtonID(parseInt(isSelected));
+  var makeSelected = document.getElementById(buttonID);
   makeSelected.style.backgroundColor = '#43d9e7';
   makeSelected.style.cursor = "auto";
 
   checkIfText();
 }
+
+function getButtonID(index){
+  var buttonID;
+  switch (index) {
+    case 0:
+        buttonID = 'letter1';
+        break;
+    case 1:
+        buttonID = 'letter2';
+        break;
+    case 2:
+        buttonID = 'letter3';
+        break;
+    case 3:
+        buttonID = 'letter4';
+        break;
+  }
+  return buttonID;
+}
+
+function saveQuestion(){
+  var question = tinyMCE.get('ques').getContent();
+  var ans1 = tinyMCE.get('ans1').getContent();
+  var ans2 = tinyMCE.get('ans2').getContent();
+  var ans3 = tinyMCE.get('ans3').getContent();
+  var ans4 = tinyMCE.get('ans4').getContent();
+
+  var numberOfQuestion;
+
+  if(sessionStorage.getItem("totalSubmittedQuestions") == null){
+      sessionStorage.setItem("totalSubmittedQuestions", "1");
+      var numberOfQuestion = 1;
+  }else{
+    var numberOfQuestion = parseInt(sessionStorage.getItem("totalSubmittedQuestions")) + 1;
+    sessionStorage.setItem("totalSubmittedQuestions", numberOfQuestion.toString());
+  }
+
+  var question_key = "ques_" + numberOfQuestion;
+  var ans1_key = "ans1_" + numberOfQuestion;
+  var ans2_key = "ans2_" + numberOfQuestion;
+  var ans3_key = "ans3_" + numberOfQuestion;
+  var ans4_key = "ans4_" + numberOfQuestion;
+  var ansID_key = "ansID_" + numberOfQuestion;
+
+  sessionStorage.setItem(question_key, question);
+  sessionStorage.setItem(ans1_key, ans1);
+  sessionStorage.setItem(ans2_key, ans2);
+  sessionStorage.setItem(ans3_key, ans3);
+  sessionStorage.setItem(ans4_key, ans4);
+  sessionStorage.setItem(ansID_key, isSelected);
+}
+
+function resetContent(){
+  tinyMCE.get('ques').setContent('');
+  tinyMCE.get('ans1').setContent('');
+  tinyMCE.get('ans2').setContent('');
+  tinyMCE.get('ans3').setContent('');
+  tinyMCE.get('ans4').setContent('');
+
+  var buttonID = getButtonID(parseInt(isSelected));
+  if(isSelected != null){
+    buttonID = getButtonID(parseInt(isSelected));
+    var rmSelected = document.getElementById(buttonID);
+    rmSelected.style.backgroundColor = "lightgrey";
+    rmSelected.style.cursor = "pointer";
+  }
+
+  submitBtn.disabled = true;
+}
+
+
 </script>
 <script src="scripts/profileModal.js"></script>
 <script src="scripts/achievementsTooltips.js"></script>
