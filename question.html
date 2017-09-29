@@ -25,19 +25,6 @@
                    ed.on('keydown', function(e) {
                       checkIfText();
                    });
-                   /*
-                   ed.on('focus', function () {
-                     $(this.contentAreaContainer.parentElement).find("div.mce-toolbar-grp").show();
-
-                  });
-                    ed.on('blur', function () {
-                      $(this.contentAreaContainer.parentElement).find("div.mce-toolbar-grp").hide();
-
-                  });
-                    ed.on("init", function () {
-                    $(this.contentAreaContainer.parentElement).find("div.mce-toolbar-grp").hide();
-
-                });*/
           }
    });
 
@@ -330,6 +317,7 @@ function saveQuestion(){
   sessionStorage.setItem(ans3_key, ans3);
   sessionStorage.setItem(ans4_key, ans4);
   sessionStorage.setItem(ansID_key, isSelected);
+  resetContent();
 }
 
 function resetContent(){
