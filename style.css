@@ -438,7 +438,10 @@ nav li a:hover:not(.active) {
   }
 
   #profile_rank{
-        display: none !important;
+    display: none !important;
+  }
+  #uoa-logo{
+    display: none !important;
   }
 
 }
@@ -462,6 +465,7 @@ nav li a:hover:not(.active) {
   #profile_rank{
         display: none !important;
   }
+
 }
 
 #profile_experience{
