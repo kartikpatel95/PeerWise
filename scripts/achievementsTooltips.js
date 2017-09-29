@@ -1,6 +1,6 @@
 document.getElementById('achievement_1').title = "Reach level 2!";
 document.getElementById('achievement_2').title = "Create first question!";
-document.getElementById('achievement_3').title = "Answer first question!";
+document.getElementById('achievement_3').title = "Answer first question correctly!";
 document.getElementById('achievement_4').title = "Write 5 questions!";
 document.getElementById('achievement_5').title = "30 day streak!";
 document.getElementById('achievement_6').title = "2 hour marathon!";

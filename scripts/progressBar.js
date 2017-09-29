@@ -41,6 +41,9 @@ function initBar(){
   if(sessionStorage.getItem("lvl") === null){
     sessionStorage.setItem("lvl", "1");
   }
+  if(sessionStorage.getItem("answeredCorrectly") === null){
+    sessionStorage.setItem("answeredCorrectly", "0");
+  }
   if(sessionStorage.getItem("answered") === null){
     sessionStorage.setItem("answered", "0");
   }
@@ -57,6 +60,7 @@ function initBar(){
   var answered = parseInt(sessionStorage.getItem("answered"));
   var written = parseInt(sessionStorage.getItem("written"));
   var exp = parseInt(sessionStorage.getItem("exp"));
+  var answeredCorrectly = parseInt(sessionStorage.getItem("answeredCorrectly"));
 
   progress.max = (level*100) + '';
   progressbar_profile.max = (level*100) + '';
@@ -102,9 +106,18 @@ function initBar(){
     unlock_achievement_2();
   }
 
-  if(answered >= 1){
+  if(written >= 5){
+    unlock_achievement_4();
+  }
+
+  if(answeredCorrectly >= 1){
     unlock_achievement_3();
   }
+
+  if(answered >= 18){
+    unlock_achievement_8();
+  }
+
 }
 
 function addAnswered()
@@ -115,8 +128,22 @@ function addAnswered()
   var answered = parseInt(sessionStorage.getItem("answered")) + 1;
   sessionStorage.setItem("answered", answered.toString());
 
+  if(answered == 18){
+    alert("Unlocked Achievement - Answered All Question!")
+  }
+
+}
+
+function addAnsweredCorrectly()
+{
+  if(sessionStorage.getItem("answeredCorrectly") === null){
+    sessionStorage.setItem("answeredCorrectly", "0");
+  }
+  var answered = parseInt(sessionStorage.getItem("answeredCorrectly")) + 1;
+  sessionStorage.setItem("answeredCorrectly", answered.toString());
+
   if(answered == 1){
-    alert("Unlocked Achievement - Answered First Question!")
+    alert("Unlocked Achievement - Answered First Question Correctly!")
   }
 }
 
@@ -130,6 +157,10 @@ function addWritten()
 
   if(written == 1){
     alert("Unlocked Achievement - Written First Question!")
+  }
+
+  if(written == 5){
+    alert("Unlocked Achievement - Written Five Question!")
   }
 }
 
@@ -154,5 +185,21 @@ function unlock_achievement_3()
   var lock = document.getElementById("lock_3");
   lock.style.display = "none";
   var achievement = document.getElementById("achievement_3");
+  achievement.style.opacity = 1;
+}
+
+function unlock_achievement_4()
+{
+  var lock = document.getElementById("lock_4");
+  lock.style.display = "none";
+  var achievement = document.getElementById("achievement_4");
+  achievement.style.opacity = 1;
+}
+
+function unlock_achievement_8()
+{
+  var lock = document.getElementById("lock_8");
+  lock.style.display = "none";
+  var achievement = document.getElementById("achievement_8");
   achievement.style.opacity = 1;
 }

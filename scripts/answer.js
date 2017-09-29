@@ -47,8 +47,6 @@ btn.onclick = function() {
     for (var i = 0, length = radiosAns.length; i < length; i++) {
       radiosAns[i].disabled = false;
     }
-    ansBtn.disabled = false;
-
     for (var i = 0, length = radiosQ.length; i < length; i++) {
         if (radiosQ[i].checked) {
             // do whatever you want with the checked radio
@@ -151,23 +149,21 @@ answerBtn.onclick = function() {
   if (GLOBAL_INDEX_OF_ANS == (parseInt(answerindex)-1)){
     alert("Correct Answer!");
     modal.style.display = "none";
-
     move();
-    resetAnsForm();
-    addAnswered();
-    addAnsweredIndex();
-    removeQuestion();
-    updateLeaderboard();
+    addAnsweredCorrectly();
   }else{
     alert("Incorrect! Answer is: " + GLOBAL_ANS);
-    addAnsweredIndex();
-    removeQuestion();
   }
+
+  resetAnsForm();
+  addAnswered();
+  addAnsweredIndex();
+  removeQuestion();
+  updateLeaderboard();
 
   for (var i = 0, length = radiosAns.length; i < length; i++) {
     radiosAns[i].disabled = true
   }
-  ansBtn.disabled = true;
 }
 
 function checkAnswerA()
