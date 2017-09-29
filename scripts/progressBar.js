@@ -102,6 +102,16 @@ function initBar(){
     document.getElementById("levelImg2").src = "images/stars/star4.JPG";
   }
 
+  if(level >= 5){
+    document.getElementById("levelImg").src = "images/awards/star4.png";
+    document.getElementById("levelImg2").src = "images/stars/star5.JPG";
+  }
+
+  if(level >= 6){
+    document.getElementById("levelImg").src = "images/awards/star4.png";
+    document.getElementById("levelImg2").src = "images/stars/star6.JPG";
+  }
+
   if(written >= 1){
     unlock_achievement_2();
   }

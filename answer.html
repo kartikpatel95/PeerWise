@@ -87,12 +87,12 @@
 <div id="answerModal" class="modal">
 
   <!-- Modal content -->
-  <div class="modal-content">
+  <div class="modal-content" id="answerModalContent">
     <div class="modal-header">
       <span class="close">&times;</span>
       <h2>Question</h2>
     </div>
-
+<div class="well">
     <form id="answerForm" action="" class="well" >
     <label id="question" class="modal-body"></label><br>
     <input type="radio" name="answer" value="1"><span id="answerA"></span><br>
@@ -102,6 +102,15 @@
 
     <button type="button" id="answerButton" class="btn btn-default btn-md" style="margin-left: 10px;">Submit</button>
     </form>
+    <div id="correct-answer-container" class="modal-body">
+      <h3 id="result-text">Incorrect!</h3>
+      <label id="correct-answer-text" style="font-weight: normal;">The answer is: +3</label>
+      <br>
+      <br>
+      <button type="button" id="closeModal" class="btn btn-default btn-md" style="margin-left: 10px;">Close</button>
+    </div>
+
+</div>
 
   </div>
 </div>
@@ -202,8 +211,8 @@
 
 
     <!----------- Footer ------------>
-	
-	
+
+
     <footer class="footer-bs">
         <p>PeerWise © University of Auckland</p>
     </footer>
@@ -218,30 +227,39 @@
 
   var q1 = ["Hello World", "Hello, World", "hello, world!", "Hello, World!"];
   var a1 = 3;
+  var e1 = '';
 
   var q2 = ["my_string_1", "1st_string", "foo", "_"];
   var a2 = 1;
+  var e2 = 'Variable names should not start with a number';
 
   var q3 = ["a", "ab", "cd", "dc"];
   var a3 = 2;
+  var e3 = '';
 
   var q4 = ["31 characters", "63 characters", "79 characters", "none of the mentioned"];
   var a4 = 3;
+  var e4 = '';
 
   var q5 = ["7", "1", "0", "5"];
   var a5 = 1;
+  var e5 = '';
 
   var q6 = ["Boolean", "Integer", "Float", "Complex"];
   var a6 = 2;
+  var e6 = '';
 
   var q7 = ["-5", "-4", "-3", "+3"];
   var a7 = 0;
+  var e7 = '';
 
   var q8 = ["+5", "-11", "+11", "-5"];
   var a8 = 0;
+  var e8 = '';
 
   var q9 = ["1", "0", "True", "False"];
   var a9 = 0;
+  var e9 = '';
 
   var answerKey = "a1";
 //-->

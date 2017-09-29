@@ -10,8 +10,13 @@ btn.disabled = true;
 var ansBtn = document.getElementById("answerButton");
 ansBtn.disabled = true;
 
+var closeBtn = document.getElementById("closeModal");
+
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+
+var correctAnswer = document.getElementById('correct-answer-container');
+correctAnswer.style.display = "none";
 
 var radiosQ = document.getElementsByName('gender');
 for (var i = 0, length = radiosQ.length; i < length; i++) {
@@ -147,15 +152,18 @@ answerBtn.onclick = function() {
       }
   }
   if (GLOBAL_INDEX_OF_ANS == (parseInt(answerindex)-1)){
-    alert("Correct Answer!");
-    modal.style.display = "none";
+    //alert("Correct Answer!");
+    document.getElementById("result-text").innerHTML = "Correct!";
+    //modal.style.display = "none";
     move();
     addAnsweredCorrectly();
   }else{
-    alert("Incorrect! Answer is: " + GLOBAL_ANS);
+    //alert("Incorrect! Answer is: " + GLOBAL_ANS);
+    document.getElementById("result-text").innerHTML = "Incorrect!";
   }
-
-  resetAnsForm();
+  document.getElementById("correct-answer-text").innerHTML = "Answer is: " + GLOBAL_ANS;
+  ansBtn.disabled = true;
+  correctAnswer.style.display = "block";
   addAnswered();
   addAnsweredIndex();
   removeQuestion();
@@ -198,6 +206,7 @@ function checkAnswer(answer)
 
 function resetAnsForm()
 {
+  correctAnswer.style.display = "none";
   ansBtn.disabled = true;
   document.getElementById("answerForm").reset();
 }
@@ -247,4 +256,9 @@ function removeQuestion(){
   }
   questionText.style.color = 'lightgrey';
   btn.disabled = true;
+}
+
+closeBtn.onclick = function() {
+  resetAnsForm();
+  modal.style.display = "none";
 }
