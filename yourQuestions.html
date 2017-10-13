@@ -57,61 +57,63 @@
 
 <form action="" class="well">
 <label>Your Questions</label><br><br>
-  <!---
-  <input id="radio_q1" type="radio" name="gender" value="1"><label class="not-bold" id="q1"></label><br id='break1'>
-  <input id="radio_q2" type="radio" name="gender" value="2"><label class="not-bold" id="q2"></label><br id='break2'>
-  <input id="radio_q3" type="radio" name="gender" value="3"><label class="not-bold" id="q3"></label><br id='break3'>
-  <input id="radio_q4" type="radio" name="gender" value="4"><label class="not-bold" id="q4"></label><br id='break4'>
-  <input id="radio_q5" type="radio" name="gender" value="5"><label class="not-bold" id="q5"></label><br id='break5'>
-  <input id="radio_q6" type="radio" name="gender" value="6"><label class="not-bold" id="q6"></label><br id='break6'>
-  <input id="radio_q7" type="radio" name="gender" value="7"><label class="not-bold" id="q7"></label><br id='break7'>
-  <input id="radio_q8" type="radio" name="gender" value="8"><label class="not-bold" id="q8"></label><br id='break8'>
-  <input id="radio_q9" type="radio" name="gender" value="9"><label class="not-bold" id="q9"></label><br id='break9'>
-  --->
-  <div id="radio_q1" class="row">
-    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('1')">1&nbsp;»</div>
-    <label id="q1" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
-  </div>
 
-  <div id="radio_q2" class="row">
-    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('2')">2&nbsp;»</div>
-    <label id="q2" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
-  </div>
-
-  <div id="radio_q3" class="row">
-    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('3')">3&nbsp;»</div>
-    <label id="q3" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
-  </div>
-
-  <div id="radio_q4" class="row">
-    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('4')">4&nbsp;»</div>
-    <label id="q4" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
-  </div>
-
-  <div id="radio_q5" class="row">
-    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('5')">5&nbsp;»</div>
-    <label id="q5" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
-  </div>
-
-  <div id="radio_q6" class="row">
-    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('6')">6&nbsp;»</div>
-    <label id="q6" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
-  </div>
-
-  <div id="radio_q7" class="row">
-    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('7')">7&nbsp;»</div>
-    <label id="q7" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
-  </div>
-
-  <div id="radio_q8" class="row">
-    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('8')">8&nbsp;»</div>
-    <label id="q8" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
-  </div>
-
-  <div id="radio_q9" class="row">
-    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('9')">9&nbsp;»</div>
-    <label id="q9" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
-  </div>
+<table class="table table-bordered">
+  <thead>
+      <tr>
+          <th>Number</th>
+          <th>Question</th>
+          <th>Difficulty</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr id="radio_q1">
+          <td><div class="container well answerOptions col-sm-1" onclick="showYourQuestion('1')">1&nbsp;»</div></td>
+          <td><label id="q1" class="col-sm-11 not-bold" style="margin-top: 8px;"></label></td>
+          <td id="diff_1"><label class="col-sm-11 not-bold" style="margin-top: 8px;">N/A</label></td>
+      </tr>
+      <tr id="radio_q2">
+          <td><div class="container well answerOptions col-sm-1" onclick="showYourQuestion('2')">2&nbsp;»</div></td>
+          <td><label id="q2" class="col-sm-11 not-bold" style="margin-top: 8px;"></label></td>
+          <td id="diff_2"><label class="col-sm-11 not-bold" style="margin-top: 8px;">N/A</label></td>
+      </tr>
+      <tr id="radio_q3">
+          <td><div class="container well answerOptions col-sm-1" onclick="showYourQuestion('3')">3&nbsp;»</div></td>
+          <td><label id="q3" class="col-sm-11 not-bold" style="margin-top: 8px;"></label></td>
+          <td id="diff_3"><label class="col-sm-11 not-bold" style="margin-top: 8px;">N/A</label></td>
+      </tr>
+      <tr id="radio_q4">
+          <td><div class="container well answerOptions col-sm-1" onclick="showYourQuestion('4')">4&nbsp;»</div></td>
+          <td><label id="q4" class="col-sm-11 not-bold" style="margin-top: 8px;"></label></td>
+          <td id="diff_4"><label class="col-sm-11 not-bold" style="margin-top: 8px;">N/A</label></td>
+      </tr>
+      <tr id="radio_q5">
+          <td><div class="container well answerOptions col-sm-1" onclick="showYourQuestion('5')">5&nbsp;»</div></td>
+          <td><label id="q5" class="col-sm-11 not-bold" style="margin-top: 8px;"></label></td>
+          <td id="diff_5"><label class="col-sm-11 not-bold" style="margin-top: 8px;">N/A</label></td>
+      </tr>
+      <tr id="radio_q6">
+          <td><div class="container well answerOptions col-sm-1" onclick="showYourQuestion('6')">6&nbsp;»</div></td>
+          <td><label id="q6" class="col-sm-11 not-bold" style="margin-top: 8px;"></label></td>
+          <td id="diff_6"><label class="col-sm-11 not-bold" style="margin-top: 8px;">N/A</label></td>
+      </tr>
+      <tr id="radio_q7">
+          <td><div class="container well answerOptions col-sm-1" onclick="showYourQuestion('7')">7&nbsp;»</div></td>
+          <td><label id="q7" class="col-sm-11 not-bold" style="margin-top: 8px;"></label></td>
+          <td id="diff_7"><label class="col-sm-11 not-bold" style="margin-top: 8px;">N/A</label></td>
+      </tr>
+      <tr id="radio_q8">
+          <td><div class="container well answerOptions col-sm-1" onclick="showYourQuestion('8')">8&nbsp;»</div></td>
+          <td><label id="q8" class="col-sm-11 not-bold" style="margin-top: 8px;"></label></td>
+          <td id="diff_8"><label class="col-sm-11 not-bold" style="margin-top: 8px;">N/A</label></td>
+      </tr>
+      <tr id="radio_q9">
+          <td><div class="container well answerOptions col-sm-1" onclick="showYourQuestion('9')">9&nbsp;»</div></td>
+          <td><label id="q9" class="col-sm-11 not-bold" style="margin-top: 8px;"></label></td>
+          <td id="diff_9"><label class="col-sm-11 not-bold" style="margin-top: 8px;">N/A</label></td>
+      </tr>
+  </tbody>
+</table>
 
   <button type="button" id="questionButton" class="btn btn-default btn-md" style="margin-left: 10px; display: none;">select Question</button>
 
@@ -163,8 +165,9 @@
       <div id="btn_answerD" class="container well notAnswerOptions col-sm-1">D&nbsp;»</div>
       <span id="answerD" class="col-sm-10" style="margin-top: 8px;"></span><br>
     </div>
+    <br>
 
-    <button type="button" id="answerButton" class="btn btn-default btn-md" style="margin-left: 10px;">Exit</button>
+    <button type="button" id="answerButton" class="btn btn-default btn-md" style="margin-left: -0px;">Close</button>
     </form>
 
   </div>

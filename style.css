@@ -421,9 +421,10 @@ nav li a:hover:not(.active) {
 .answerOptions{
   height: 15px;
   width: 46px;
-  margin-left: 23px;
+  margin-left: 25px;
   margin-right: 5px;
   margin-top: 2px;
+  margin-bottom: 2px;
   background-color: lightgray;
   text-align: center;
   padding-top: 5px;
@@ -438,9 +439,10 @@ nav li a:hover:not(.active) {
 .notAnswerOptions{
   height: 15px;
   width: 46px;
-  margin-left: 23px;
+  margin-left: 25px;
   margin-right: 5px;
   margin-top: 2px;
+  margin-bottom: 2px;
   color: grey;
   background-color: lightgray;
   text-align: center;
@@ -457,9 +459,10 @@ nav li a:hover:not(.active) {
 .notAnswerOptionsTrue{
   height: 15px;
   width: 46px;
-  margin-left: 23px;
+  margin-left: 25px;
   margin-right: 5px;
   margin-top: 2px;
+  margin-bottom: 2px;
   color: grey;
   background-color: #43d9e7;
   text-align: center;

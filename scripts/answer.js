@@ -209,6 +209,7 @@ function resetAnsForm()
   correctAnswer.style.display = "none";
   ansBtn.disabled = true;
   document.getElementById("answerForm").reset();
+  document.getElementById("rateDiff").selectedIndex = 0;
 }
 
 function addAnsweredIndex(){
@@ -226,54 +227,66 @@ function removeQuestion(){
   //radiosQ[index-1].disabled = true;
   var questionText;
   var btn_to_disable;
+  var diff;
+
   switch (index) {
     case 1:
         questionText = document.getElementById("q1");
         btn_to_disable = document.getElementById("btn_q1");
         $("#btn_q1").removeAttr("onclick");
+        diff = document.getElementById("diff_1");
         break;
     case 2:
         questionText = document.getElementById("q2");
         btn_to_disable = document.getElementById("btn_q2");
         $("#btn_q2").removeAttr("onclick");
+        diff = document.getElementById("diff_2");
         break;
     case 3:
         questionText = document.getElementById("q3");
         btn_to_disable = document.getElementById("btn_q3");
         $("#btn_q3").removeAttr("onclick");
+        diff = document.getElementById("diff_3");
         break;
     case 4:
         questionText = document.getElementById("q4");
         btn_to_disable = document.getElementById("btn_q4");
         $("#btn_q4").removeAttr("onclick");
+        diff = document.getElementById("diff_4");
         break;
     case 5:
         questionText = document.getElementById("q5");
         btn_to_disable = document.getElementById("btn_q5");
         $("#btn_q5").removeAttr("onclick");
+        diff = document.getElementById("diff_5");
         break;
     case 6:
         questionText = document.getElementById("q6");
         btn_to_disable = document.getElementById("btn_q6");
         $("#btn_q6").removeAttr("onclick");
+        diff = document.getElementById("diff_6");
         break;
     case 7:
         questionText = document.getElementById("q7");
         btn_to_disable = document.getElementById("btn_q7");
         $("#btn_q7").removeAttr("onclick");
+        diff = document.getElementById("diff_7");
         break;
     case 8:
         questionText = document.getElementById("q8");
         btn_to_disable = document.getElementById("btn_q8");
         $("#btn_q8").removeAttr("onclick");
+        diff = document.getElementById("diff_8");
         break;
     case 9:
         questionText = document.getElementById("q9");
         btn_to_disable = document.getElementById("btn_q9");
         $("#btn_q9").removeAttr("onclick");
+        diff = document.getElementById("diff_9");
         break;
   }
   questionText.style.color = 'lightgrey';
+  diff.style.color = 'lightgrey';
   btn_to_disable.classList.remove("answerOptions");
   btn_to_disable.classList.add("notAnswerOptions");
   btn.disabled = true;

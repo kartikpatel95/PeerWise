@@ -63,64 +63,62 @@
 
   <label>Java Questions</label><br><br>
 
-  <!--
-  <input type="radio" name="gender" value="1"><span id="q1">Which of the following is a valid print statement in java?</span><br>
-  <input type="radio" name="gender" value="2"><span id="q2">Which one of the following is not a java IDE?</span><br>
-  <input type="radio" name="gender" value="3"><span id="q3">Which is used to phase a object as a integer?</span><br>
-  <input type="radio" name="gender" value="4"><span id="q4">Which is the correct format for the main?</span><br>
-  <input type="radio" name="gender" value="5"><span id="q5">Which is the correct way to create a package?</span><br>
-  <input type="radio" name="gender" value="6"><span id="q6">Which is the correct way a string variable is defined?</span><br>
-  <input type="radio" name="gender" value="7"><span id="q7">What is the correct output of Math.round(100.675)?</span><br>
-  <input type="radio" name="gender" value="8"><span id="q8">Which is the correct way that to perform a override?</span><br>
-  <input type="radio" name="gender" value="9"><span id="q9">Which is not a java data type?</span><br><br>
-  -->
-
-  <div class="row">
-    <div id="btn_q1" class="container well answerOptions col-sm-1" onclick="viewQuestion('1')">1&nbsp;»</div>
-    <span id="q1" class="col-sm-11" style="margin-top: 8px;">Which of the following is a valid print statement in java?</span><br>
-  </div>
-  <div class="row">
-    <div id="btn_q2" class="container well answerOptions col-sm-1" onclick="viewQuestion('2')">2&nbsp;»</div>
-    <span id="q2" class="col-sm-11" style="margin-top: 8px;">Which one of the following is not a java IDE?</span><br>
-  </div>
-
-  <div class="row">
-    <div id="btn_q3" class="container well answerOptions col-sm-1" onclick="viewQuestion('3')">3&nbsp;»</div>
-    <span id="q3" class="col-sm-11" style="margin-top: 8px;">Which is used to phase a object as a integer?</span><br>
-  </div>
-
-  <div class="row">
-    <div id="btn_q4" class="container well answerOptions col-sm-1" onclick="viewQuestion('4')">4&nbsp;»</div>
-    <span id="q4" class="col-sm-11" style="margin-top: 8px;">Which is the correct format for the main?</span><br>
-  </div>
-
-  <div class="row">
-    <div id="btn_q5" class="container well answerOptions col-sm-1" onclick="viewQuestion('5')">5&nbsp;»</div>
-    <span id="q5" class="col-sm-11" style="margin-top: 8px;">Which is the correct way to create a package?</span><br>
-  </div>
-
-  <div class="row">
-    <div id="btn_q6" class="container well answerOptions col-sm-1" onclick="viewQuestion('6')">6&nbsp;»</div>
-    <span id="q6" class="col-sm-11" style="margin-top: 8px;">Which is the correct way a string variable is defined?</span><br>
-  </div>
-
-  <div class="row">
-    <div id="btn_q7" class="container well answerOptions col-sm-1" onclick="viewQuestion('7')">7&nbsp;»</div>
-    <span id="q7" class="col-sm-11" style="margin-top: 8px;">What is the correct output of Math.round(100.675)?</span><br>
-  </div>
-
-  <div class="row">
-    <div id="btn_q8" class="container well answerOptions col-sm-1" onclick="viewQuestion('8')">8&nbsp;»</div>
-    <span id="q8" class="col-sm-11" style="margin-top: 8px;">Which is the correct way that to perform a override?</span><br>
-  </div>
-
-  <div class="row">
-    <div id="btn_q9" class="container well answerOptions col-sm-1" onclick="viewQuestion('9')">9&nbsp;»</div>
-    <span id="q9" class="col-sm-11" style="margin-top: 8px;">Which is not a java data type?</span><br>
-  </div>
-
-
-
+  <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Question</th>
+            <th>Difficulty</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><div id="btn_q1" class="container well answerOptions col-sm-1" onclick="viewQuestion('1')">1&nbsp;»</div></td>
+            <td><span id="q1" class="col-sm-11" style="margin-top: 8px;">Which of the following is a valid print statement in java?</span></td>
+            <td id="diff_1"><label class="col-sm-11 not-bold" style="margin-top: 8px;">Easy</label></td>
+        </tr>
+        <tr>
+            <td><div id="btn_q2" class="container well answerOptions col-sm-1" onclick="viewQuestion('2')">2&nbsp;»</div></td>
+            <td><span id="q2" class="col-sm-11" style="margin-top: 8px;">Which one of the following is not a java IDE?</span></td>
+            <td id="diff_2"><label class="col-sm-11 not-bold" style="margin-top: 8px;">Easy</label></td>
+        </tr>
+        <tr>
+            <td><div id="btn_q3" class="container well answerOptions col-sm-1" onclick="viewQuestion('3')">3&nbsp;»</div></td>
+            <td><span id="q3" class="col-sm-11" style="margin-top: 8px;">Which is used to phase a object as a integer?</span></td>
+            <td id="diff_3"><label class="col-sm-11 not-bold" style="margin-top: 8px;">Easy</label></td>
+        </tr>
+        <tr>
+            <td><div id="btn_q4" class="container well answerOptions col-sm-1" onclick="viewQuestion('4')">4&nbsp;»</div></td>
+            <td><span id="q4" class="col-sm-11" style="margin-top: 8px;">Which is the correct format for the main?</span></td>
+            <td id="diff_4"><label class="col-sm-11 not-bold" style="margin-top: 8px;">Easy</label></td>
+        </tr>
+        <tr>
+            <td><div id="btn_q5" class="container well answerOptions col-sm-1" onclick="viewQuestion('5')">5&nbsp;»</div></td>
+            <td><span id="q5" class="col-sm-11" style="margin-top: 8px;">Which is the correct way to create a package?</span></td>
+            <td id="diff_5"><label class="col-sm-11 not-bold" style="margin-top: 8px;">Easy</label></td>
+        </tr>
+        <tr>
+            <td><div id="btn_q6" class="container well answerOptions col-sm-1" onclick="viewQuestion('6')">6&nbsp;»</div></td>
+            <td><span id="q6" class="col-sm-11" style="margin-top: 8px;">Which is the correct way a string variable is defined?</span></td>
+            <td id="diff_6"><label class="col-sm-11 not-bold" style="margin-top: 8px;">Easy</label></td>
+        </tr>
+        <tr>
+            <td><div id="btn_q7" class="container well answerOptions col-sm-1" onclick="viewQuestion('7')">7&nbsp;»</div></td>
+            <td><span id="q7" class="col-sm-11" style="margin-top: 8px;">What is the correct output of Math.round(100.675)?</span></td>
+            <td id="diff_7"><label class="col-sm-11 not-bold" style="margin-top: 8px;">Easy</label></td>
+        </tr>
+        <tr>
+            <td><div id="btn_q8" class="container well answerOptions col-sm-1" onclick="viewQuestion('8')">8&nbsp;»</div></td>
+            <td><span id="q8" class="col-sm-11" style="margin-top: 8px;">Which is the correct way that to perform a override?</span></td>
+            <td id="diff_8"><label class="col-sm-11 not-bold" style="margin-top: 8px;">Easy</label></td>
+        </tr>
+        <tr>
+            <td><div id="btn_q9" class="container well answerOptions col-sm-1" onclick="viewQuestion('9')">9&nbsp;»</div></td>
+            <td><span id="q9" class="col-sm-11" style="margin-top: 8px;">Which is not a java data type?</span></td>
+            <td id="diff_9"><label class="col-sm-11 not-bold" style="margin-top: 8px;">Easy</label></td>
+        </tr>
+    </tbody>
+</table>
 
   <button type="button" id="questionButton" class="btn btn-default btn-md" style="display: none;">Select Question</button>
 
@@ -185,9 +183,17 @@
         <div id="correct-answer-container" class="modal-body">
           <h3 id="result-text">Incorrect!</h3>
           <label id="correct-answer-text" style="font-weight: normal;">The answer is: +3</label>
+
+          <h3>Rate Difficulty</h3>
+          <select id="rateDiff" style="margin-left: 10px;">
+            <option value="easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
           <br>
           <br>
-          <button type="button" id="closeModal" class="btn btn-default btn-md" style="margin-left: 10px;">Close</button>
+
+          <button type="button" id="closeModal" class="btn btn-default btn-md" style="margin-top: 15px;">Close</button>
         </div>
 
     </div>
