@@ -5,7 +5,9 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
+  margin:0;
+  padding:0;
+  height:100%;
 
 }
 
@@ -113,6 +115,7 @@ hr {
 
 input[type="radio"]{
   margin: 10px 10px 0 10px;
+  cursor: pointer;
 }
 
 
@@ -193,7 +196,7 @@ cursor:pointer;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
-	  cursor:pointer;
+	  cursor:default;
     background-color:#F96D00;
 }
 
@@ -203,13 +206,13 @@ cursor:pointer;
     margin-top: -100px;
     padding: 0;
     border: 1px solid #888;
-    width: 90%;
+    width: 60%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
-    cursor:pointer;
+    cursor:default;
     background-color:#F96D00;
 }
 
@@ -225,7 +228,7 @@ cursor:pointer;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
-    cursor:pointer;
+    cursor:default;
     background-color:#F96D00;
 }
 
@@ -306,11 +309,13 @@ cursor:pointer;
     background-color: #F96D00;
     color: white;
     height: 90px;
+    cursor: default;
 }
 
 .modal-body {
     padding: 2px 16px;
     overflow-y: auto;
+    cursor: default;
 }
 
 
@@ -322,6 +327,7 @@ cursor:pointer;
     padding: 2px 16px;
     background-color: #588bb6;
     color: white;
+    cursor: default;
 }
 
 #peerwiseImg{
@@ -410,6 +416,61 @@ nav li a:hover:not(.active) {
 .questionOptions:hover{
   background-color: #43d9e7 !important;
   cursor: pointer;
+}
+
+.answerOptions{
+  height: 15px;
+  width: 46px;
+  margin-left: 23px;
+  margin-right: 5px;
+  margin-top: 2px;
+  background-color: lightgray;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 25px;
+  padding-left: 12px;
+}
+.answerOptions:focus,
+.answerOptions:hover{
+  background-color: #43d9e7 !important;
+  cursor: pointer;
+}
+.notAnswerOptions{
+  height: 15px;
+  width: 46px;
+  margin-left: 23px;
+  margin-right: 5px;
+  margin-top: 2px;
+  color: grey;
+  background-color: lightgray;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 25px;
+  padding-left: 12px;
+}
+
+.notAnswerOptions:focus,
+.notAnswerOptions:hover{
+  cursor: not-allowed;
+}
+
+.notAnswerOptionsTrue{
+  height: 15px;
+  width: 46px;
+  margin-left: 23px;
+  margin-right: 5px;
+  margin-top: 2px;
+  color: grey;
+  background-color: #43d9e7;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 25px;
+  padding-left: 12px;
+}
+
+.notAnswerOptionsTrue:focus,
+.notAnswerOptionsTrue:hover{
+  cursor: not-allowed;
 }
 
 .not-bold {
@@ -544,9 +605,18 @@ nav li a:hover:not(.active) {
 	min-height: 40px;
 	text-align:center;
 	margin-top:20px;
-  margin-bottom: -20px;
+  margin-bottom: -100px;
+  width:100%;
 }
 
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+#content {
+	padding-bottom:40px; /* Height of the footer element */
+}
 
 #joinCourse{
 	margin-left:60px;

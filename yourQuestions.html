@@ -17,9 +17,9 @@
 
     <div class= "jumbotron">
         <img id="logo" src="images/logo.png" style="margin: -50px;">
-           <div id="profile-container" class="well" align="right" style="Margin-top: -40px; width: 400px; height: 175px; margin-right: 2%; margin-bottom:0px; padding-left: 0px; float: right;">
+           <div id="profile-container" class="well" align="right" data-toggle="tooltip" data-placement="bottom" onclick="openModal()" style="Margin-top: -40px; width: 400px; height: 175px; margin-right: 2%; margin-bottom:0px; padding-left: 0px; float: right; cursor: pointer;">
              <img id="levelImg2" class="" src="" align="left" height="100px;" style="margin-left:10%; margin-top: 1%;">
-             <img id="profile-pic" src="images/user.png" onclick="openModal()" alt="User" height="100px" width="100px" align="right" style="margin-top: -5px; cursor: pointer;">
+             <img id="profile-pic" src="images/user.png" alt="User" height="100px" width="100px" align="right" style="margin-top: -5px; cursor: pointer;">
 
             <br><br><br><br><br>
             <p style="color:black; text-align: right; margin-bottom: 16px;"> <strong>Group8b</strong></p>
@@ -57,7 +57,7 @@
 
 <form action="" class="well">
 <label>Your Questions</label><br>
-
+  <!---
   <input id="radio_q1" type="radio" name="gender" value="1"><label class="not-bold" id="q1"></label><br id='break1'>
   <input id="radio_q2" type="radio" name="gender" value="2"><label class="not-bold" id="q2"></label><br id='break2'>
   <input id="radio_q3" type="radio" name="gender" value="3"><label class="not-bold" id="q3"></label><br id='break3'>
@@ -67,10 +67,53 @@
   <input id="radio_q7" type="radio" name="gender" value="7"><label class="not-bold" id="q7"></label><br id='break7'>
   <input id="radio_q8" type="radio" name="gender" value="8"><label class="not-bold" id="q8"></label><br id='break8'>
   <input id="radio_q9" type="radio" name="gender" value="9"><label class="not-bold" id="q9"></label><br id='break9'>
+  --->
+  <div id="radio_q1" class="row">
+    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('1')">1&nbsp;»</div>
+    <label id="q1" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
+  </div>
 
-  <br><br>
+  <div id="radio_q2" class="row">
+    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('2')">2&nbsp;»</div>
+    <label id="q2" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
+  </div>
 
-  <button type="button" id="questionButton" class="btn btn-default btn-md">select Question</button>
+  <div id="radio_q3" class="row">
+    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('3')">3&nbsp;»</div>
+    <label id="q3" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
+  </div>
+
+  <div id="radio_q4" class="row">
+    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('4')">4&nbsp;»</div>
+    <label id="q4" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
+  </div>
+
+  <div id="radio_q5" class="row">
+    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('5')">5&nbsp;»</div>
+    <label id="q5" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
+  </div>
+
+  <div id="radio_q6" class="row">
+    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('6')">6&nbsp;»</div>
+    <label id="q6" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
+  </div>
+
+  <div id="radio_q7" class="row">
+    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('7')">7&nbsp;»</div>
+    <label id="q7" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
+  </div>
+
+  <div id="radio_q8" class="row">
+    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('8')">8&nbsp;»</div>
+    <label id="q8" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
+  </div>
+
+  <div id="radio_q9" class="row">
+    <div class="container well answerOptions col-sm-1" onclick="showYourQuestion('9')">9&nbsp;»</div>
+    <label id="q9" class="col-sm-11 not-bold" style="margin-top: 8px;"></label>
+  </div>
+
+  <button type="button" id="questionButton" class="btn btn-default btn-md" style="margin-left: 10px; display: none;">select Question</button>
 
   <div class="container">
     <ul class="pager">
@@ -95,10 +138,31 @@
 
     <form id="answerForm" action="" class="well" >
     <label id="question" class="modal-body"></label><br>
+    <!---
     <input type="radio" name="answer" value="1"><label class="not-bold" id="answerA"></label><br>
     <input type="radio" name="answer" value="2"><label class="not-bold" id="answerB"></label><br>
     <input type="radio" name="answer" value="3"><label class="not-bold" id="answerC"></label><br>
     <input type="radio" name="answer" value="4"><label class="not-bold" id="answerD"></label><br><br>
+    --->
+
+    <div class="row">
+      <div id="btn_answerA" class="container well notAnswerOptions col-sm-1">A&nbsp;»</div>
+      <span id="answerA" class="col-sm-10" style="margin-top: 8px;"></span><br>
+    </div>
+    <div class="row">
+      <div id="btn_answerB" class="container well notAnswerOptions col-sm-1">B&nbsp;»</div>
+      <span id="answerB" class="col-sm-10" style="margin-top: 8px;"></span><br>
+    </div>
+
+    <div class="row">
+      <div id="btn_answerC" class="container well notAnswerOptions col-sm-1">C&nbsp;»</div>
+      <span id="answerC" class="col-sm-10" style="margin-top: 8px;"></span><br>
+    </div>
+
+    <div class="row">
+      <div id="btn_answerD" class="container well notAnswerOptions col-sm-1">D&nbsp;»</div>
+      <span id="answerD" class="col-sm-10" style="margin-top: 8px;"></span><br>
+    </div>
 
     <button type="button" id="answerButton" class="btn btn-default btn-md" style="margin-left: 10px;">Exit</button>
     </form>
@@ -131,52 +195,52 @@
       </div>
       <div class="container">
           <div id="badge_container">
-              <div class="badge_item">
-                  <img id="achievement_1" class="achievement-image" src="images/badges/leveledup2.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_1" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_1" class="achievement-image" src="images/badges/leveledup2.jpg" align="left">
                   <img id="lock_1" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
-              <div class="badge_item">
-                  <img id="achievement_2" class="achievement-image" src="images/badges/firstq.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_2" class="badge_item_2" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_2" class="achievement-image" src="images/badges/firstq.jpg" align="left">
                   <img id="lock_2" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
-              <div class="badge_item">
-                  <img id="achievement_3" class="achievement-image" src="images/badges/firstans.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_3" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_3" class="achievement-image" src="images/badges/firstans.jpg" align="left">
                   <img id="lock_3" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
-              <div class="badge_item">
-                  <img id="achievement_4" class="achievement-image" src="images/badges/write5q.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_4" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_4" class="achievement-image" src="images/badges/write5q.jpg" align="left">
                   <img id="lock_4" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
-              <div class="badge_item">
-                  <img id="achievement_5" class="achievement-image" src="images/badges/stayon30.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_5" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_5" class="achievement-image" src="images/badges/stayon30.jpg" align="left">
                   <img id="lock_5" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
-              <div class="badge_item">
-                  <img id="achievement_6" class="achievement-image" src="images/badges/marathon.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_6" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_6" class="achievement-image" src="images/badges/marathon.jpg" align="left">
                   <img id="lock_6" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
-              <div class="badge_item">
-                  <img id="achievement_7" class="achievement-image" src="images/badges/einstein.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_7" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_7" class="achievement-image" src="images/badges/einstein.jpg" align="left">
                   <img id="lock_7" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
-              <div class="badge_item">
-                  <img id="achievement_8" class="achievement-image" src="images/badges/answerall.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_8" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_8" class="achievement-image" src="images/badges/answerall.jpg" align="left">
                   <img id="lock_8" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
-              <div class="badge_item">
-                  <img id="achievement_9" class="achievement-image" src="images/badges/slack.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_9" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_9" class="achievement-image" src="images/badges/slack.jpg" align="left">
                   <img id="lock_9" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
-              <div class="badge_item">
-                  <img id="achievement_10" class="achievement-image" src="images/badges/explorer.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_10" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_10" class="achievement-image" src="images/badges/explorer.jpg" align="left">
                   <img id="lock_10" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
-              <div class="badge_item">
-                  <img id="achievement_11" class="achievement-image" src="images/badges/revealed.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_11" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_11" class="achievement-image" src="images/badges/revealed.jpg" align="left">
                   <img id="lock_11" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
-              <div class="badge_item">
-                  <img id="achievement_12" class="achievement-image" src="images/badges/revealed.jpg" align="left" data-toggle="tooltip" data-placement="bottom">
+              <div class="badge_item" id="badge_item_12" data-toggle="tooltip" data-placement="bottom">
+                  <img id="achievement_12" class="achievement-image" src="images/badges/revealed.jpg" align="left">
                   <img id="lock_12" src="images/awards/lock.png" alt="lock" class="lock">
               </div>
           </div>
@@ -204,7 +268,7 @@
     <!----------- Footer ------------>
 
 
-    <footer class="footer-bs">
+    <footer class="footer-bs" style="margin-top:350px;">
         <p>PeerWise © University of Auckland</p>
     </footer>
 
@@ -250,7 +314,7 @@
       document.getElementById(("q"+i)).innerHTML = sessionStorage.getItem("ques_" + i);
     }else{
       document.getElementById(("radio_q"+i)).style.display = "none";
-      document.getElementById(("break"+i)).style.display = "none";
+      //document.getElementById(("break"+i)).style.display = "none";
     }
   }
 
@@ -302,6 +366,86 @@
   function resetAnsForm()
   {
     document.getElementById("answerForm").reset();
+  }
+
+function showYourQuestion(value){
+    var index = parseInt(value);
+
+    GLOBAL_INDEX_OF_ANS = sessionStorage.getItem("ansID_" + index);
+
+    var answerA = document.getElementById('answerA');
+    var answerB = document.getElementById('answerB');
+    var answerC = document.getElementById('answerC');
+    var answerD = document.getElementById('answerD');
+
+    document.getElementById('question').innerHTML = sessionStorage.getItem("ques_" + index);
+    answerA.innerHTML = sessionStorage.getItem("ans1_" + index);
+    answerB.innerHTML = sessionStorage.getItem("ans2_" + index);
+    answerC.innerHTML = sessionStorage.getItem("ans3_" + index);
+    answerD.innerHTML = sessionStorage.getItem("ans4_" + index);
+
+    for (var i = 0, length = 4; i < length; i++) {
+      var btn_to_disable;
+      if (i != (parseInt(GLOBAL_INDEX_OF_ANS))){
+        switch (i) {
+          case 0:
+              btn_to_disable = document.getElementById("btn_answerA");
+              btn_to_disable.classList.remove("notAnswerOptionsTrue");
+              btn_to_disable.classList.add("notAnswerOptions");
+              $("#btn_answerA").removeAttr("onclick");
+              break;
+          case 1:
+              btn_to_disable = document.getElementById("btn_answerB");
+              btn_to_disable.classList.remove("notAnswerOptionsTrue");
+              btn_to_disable.classList.add("notAnswerOptions");
+              $("#btn_answerB").removeAttr("onclick");
+              break;
+          case 2:
+              btn_to_disable = document.getElementById("btn_answerC");
+              btn_to_disable.classList.remove("notAnswerOptionsTrue");
+              btn_to_disable.classList.add("notAnswerOptions");
+              $("#btn_answerC").removeAttr("onclick");
+              break;
+          case 3:
+              btn_to_disable = document.getElementById("btn_answerD");
+              btn_to_disable.classList.remove("notAnswerOptionsTrue");
+              btn_to_disable.classList.add("notAnswerOptions");
+              $("#btn_answerD").removeAttr("onclick");
+              break;
+        }
+      }else{
+        switch (i) {
+          case 0:
+              btn_to_disable = document.getElementById("btn_answerA");
+              btn_to_disable.classList.remove("notAnswerOptions");
+              btn_to_disable.classList.add("notAnswerOptionsTrue");
+              $("#btn_answerA").removeAttr("onclick");
+              break;
+          case 1:
+              btn_to_disable = document.getElementById("btn_answerB");
+              btn_to_disable.classList.remove("notAnswerOptions");
+              btn_to_disable.classList.add("notAnswerOptionsTrue");
+              $("#btn_answerB").removeAttr("onclick");
+              break;
+          case 2:
+              btn_to_disable = document.getElementById("btn_answerC");
+              btn_to_disable.classList.remove("notAnswerOptions");
+              btn_to_disable.classList.add("notAnswerOptionsTrue");
+              $("#btn_answerC").removeAttr("onclick");
+              break;
+          case 3:
+              btn_to_disable = document.getElementById("btn_answerD");
+              btn_to_disable.classList.remove("notAnswerOptions");
+              btn_to_disable.classList.add("notAnswerOptionsTrue");
+              $("#btn_answerD").removeAttr("onclick");
+              break;
+        }
+      }
+    }
+
+
+
+    modal.style.display = "block";
   }
 //-->
 </script>

@@ -15,7 +15,7 @@ function move() {
   var level = parseInt(sessionStorage.getItem("lvl"));
 
   if (progress.value >= level*100){
-	   alert("Congradulation - Level Up");
+	   alert("Congratulations - Level Up");
 	   progress.value = 0;
      level = parseInt(sessionStorage.getItem("lvl")) + 1
      sessionStorage.setItem("lvl", level.toString());
