@@ -482,6 +482,13 @@ nav li a:hover:not(.active) {
     margin-top: 5px;
 }
 
+.dotted{
+    border: dotted 3px #000000;
+}
+table{
+    border-collapse:collapse;/*This property collapses borders together*/
+}
+
 
 @media only screen and (max-width: 940px) {
   .profile_tab{
