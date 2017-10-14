@@ -483,10 +483,11 @@ nav li a:hover:not(.active) {
 }
 
 .dotted{
-    border: dotted 3px #000000;
+    border: dotted 1px #cccccc !important;
 }
+
 table{
-    border-collapse:collapse;/*This property collapses borders together*/
+    border-collapse:collapse !important;/*This property collapses borders together*/
 }
 
 
